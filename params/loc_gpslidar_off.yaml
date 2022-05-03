@@ -1,0 +1,31 @@
+
+#-variables for global_planning node
+global_planning: {
+  url_path: "/home/mice85/aurova-lab/aurova_ws/src/applications/paths/parque_01.osm",
+  
+  url_file_out: "/home/mice85/aurova-lab/aurova_ws/src/application_navigation/output_files/",
+  
+  #closed_loop: [0, 1, 2, 3, 4, 5, 6, 7, 8, 7, 6, 5, 4, 3, 2, 1],
+  closed_loop: [0, 1, 2, 3, 4, 5, 6, 28, 29, 30, 31, 32, 13, 25, 26, 24, 27, 4, 3, 2, 1],
+  #closed_loop: [0, 1, 2, 3, 4, 27, 24, 23, 22, 21, 15, 16, 17, 18, 19, 20],
+  #closed_loop: [4, 27, 24, 14, 13, 32, 12, 11, 10, 9, 8, 7, 6, 5],
+  
+  save_data: false,
+  frame_id: "map",
+  var_x: 0.2,
+  var_y: 0.01,
+  var_z: 100.0, #0.01,
+  var_w: 0.1,
+  type_dist: "E",
+  rad_reached: 4.0,
+  operation_mode: 2, # 1) follow path to global goal. 2) follow closed loop 3) bypass global goal
+  stop_code: 10.0 # in 'z' coordinate
+}
+
+#-variables for gps_to_odom node
+gps_to_odom: {
+  frame_id: "map",
+  min_speed: 0.4,
+  max_speed: 1.3
+}
+
