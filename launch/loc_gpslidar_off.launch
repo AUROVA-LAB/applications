@@ -24,13 +24,16 @@
     -->
   </node>
   
-  <!-- Odometry ackermann TODO: sustitude by odometry LiDAR!!! -->
-  <include file="$(find ackermann_to_odom)/launch/start_odometry.launch" />
+    <!-- velodyne preprocess -->
+  <include file="$(find pc2image)/launch/VLP16_image.launch" />
   
-  <!-- Fusion-based localization KF TODO: sustitude by optimization process!!! -->
-    <node pkg="ekf_fusion" type="ekf_fusion" name="ekf_fusion" output="screen">
-    <remap from="odom" to="odometry" />
-  </node>
+  <!-- lidar odometry -->
+  <include file="$(find odom_estimation_pc)/launch/odomEstimation_VLP16.launch" />  
+  <!-- <include file="$(find ackermann_to_odom)/launch/start_odometry.launch" /> -->
+  
+  
+  <!-- Fusion-based localization by optimization process -->
+  <include file="$(find gps_odom_optimization)/launch/node.launch" />
 
   <!-- node for decoded velodyne packages -->
   <include file="$(find robot_blue)/launch/components/start_velodyne.launch" />  

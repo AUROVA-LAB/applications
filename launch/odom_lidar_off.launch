@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- rosbags list -->
+  <arg name="bag_file_1" default="/home/mice85/aurova-lab/labrobotica/dataset/2021-12-00\ Experimentos\ JFR/loop_1.bag"/>
+  <arg name="bag_file_11" default="/home/mice85/aurova-lab/labrobotica/dataset/2021-02-26\ Experimentos\ RAL/2021-02-26-11-29-37.bag"/>
+
+  <!-- velodyne preprocess -->
+  <include file="$(find pc2image)/launch/VLP16_image.launch" />
+  
+  <!-- lidar odometry -->
+  <include file="$(find odom_estimation_pc)/launch/odomEstimation_VLP16.launch" />  
+  
+  <!-- node for decoded velodyne packages -->
+  <include file="$(find robot_blue)/launch/components/start_velodyne.launch" />  
+  
+  <arg name="rviz" default="true" />
+  <group if="$(arg rviz)">
+      <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find odom_estimation_pc)/rviz/odomEstimation.rviz" />
+  </group>
+
+  <node pkg="rosbag" type="play" name="rosbagplay" args="$(arg bag_file_11) --clock -d 5" required="true" />
+  
+</launch>
