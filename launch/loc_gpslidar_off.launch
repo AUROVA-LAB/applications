@@ -17,10 +17,10 @@
 
   <!-- GPS observations in odometry format -->
   <node pkg="gps_to_odom" type="gps_to_odom" name="gps_to_odom" output="screen">
-    <remap from="fix" to="rover/fix" />
-    <!--
     <remap from="fix" to="multiGNSS_Loc" />
     <remap from="rover/fix_velocity" to="multiGNSS_Vel" />
+    <!--
+    <remap from="fix" to="rover/fix" />
     -->
   </node>
   
@@ -36,9 +36,11 @@
   <include file="$(find gps_odom_optimization)/launch/node.launch" />
 
   <!-- node for decoded velodyne packages -->
+  <!--
   <include file="$(find robot_blue)/launch/components/start_velodyne.launch" />  
+  -->
 
-  <node pkg="rosbag" type="play" name="rosbagplay" args="$(arg bag_file_11) --clock -d 5" required="true" />
+  <node pkg="rosbag" type="play" name="rosbagplay" args="$(arg bag_file_1) --clock -d 5" required="true" />
   <node type="rviz" name="rviz" pkg="rviz" args="-d $(find applications)/rviz/localization.rviz" />
   
 </launch>
