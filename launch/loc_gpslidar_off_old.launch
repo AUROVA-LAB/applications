@@ -12,7 +12,9 @@
   <include file="$(find robot_blue)/launch/components/start_tf.launch" />
 
   <!-- LPP, GPP, and utm -> map transformation -->
-  <node name="global_planning" pkg="global_planning" type="global_planning" output="screen" />
+  <node name="global_planning" pkg="global_planning" type="global_planning" output="screen" >
+      <remap from="pose_plot" to="gps_odom_optimization/localization" />
+  </node>
   <node name="local_planning" pkg="local_planning" type="local_planning" output="screen" >
       <remap from="pose_plot" to="gps_odom_optimization/localization" />
   </node>
