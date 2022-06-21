@@ -2,7 +2,8 @@
 <launch>
 
   <!-- rosbags list -->
-  <arg name="bag_file_1" default="/home/aurova/aurova-lab/labrobotica/dataset/2021-12-00\ Experimentos\ JFR/loop_1.bag"/>
+  <arg name="bag_file_1" default="/home/mice85/aurova-lab/labrobotica/dataset/2021-12-00\ Experimentos\ JFR/loop_1.bag"/>
+  <arg name="bag_file_2" default="/home/aurova/aurova-lab/labrobotica/dataset/2021-12-00\ Experimentos\ JFR/loop_1.bag"/>
   <arg name="bag_file_11" default="/home/aurova/aurova-lab/labrobotica/dataset/2021-02-26\ Experimentos\ RAL/2021-02-26-11-29-37.bag"/>
  
   <!-- parameters loading -->
