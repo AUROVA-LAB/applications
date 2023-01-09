@@ -4,7 +4,8 @@ use_sim_time: true
 #-variables for global_planning node
 global_planning: {
   #url_path: "/home/mice85/aurova-lab/aurova_ws/src/applications/paths/parque_01.osm",
-  url_path: "/home/blue-onboard/aurova-lab/aurova_ws/src/applications/paths/parque_01.osm",
+  #url_path: "/home/blue-onboard/aurova-lab/aurova_ws/src/applications/paths/parque_01.osm",
+  url_path: "/home/aurova-ma/aurova-lab/aurova_ws/src/applications/paths/parque_01.osm",
   
   url_file_out: "/home/aurova/aurova-lab/aurova_ws/src/application_navigation/output_files/",
   
