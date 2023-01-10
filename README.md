@@ -14,11 +14,11 @@ The "applications" repository is a ROS package that contains files to combine di
 ### Commands to use application:
 
 - Download bag file.
-- Modify "launch/loc_gpslidar_off.launch" to provide correct link in "bag_file_1" argument.
-- Modify "params/loc_gpslidar_off.yaml" to provide correct link in "url_path" variable.
+- Modify "launch/nav_NVP_GN_offline.launch" to provide correct link in "bag_file_1" argument.
+- Modify "params/nav_NVP_GN_offline.yaml" to provide correct link in "url_path" variable.
 - Run next command for localization:
 
 ```shell
-roslaunch applications loc_gpslidar_off.launch
+roslaunch applications nav_NVP_GN_offline.launch
 ```
 - For autonomous navigation send "2D Nav Goal" from rviz.

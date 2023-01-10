@@ -6,7 +6,7 @@
   <arg name="bag_file_11" default="/home/mice85/aurova-lab/labrobotica/dataset/2021-02-26\ Experimentos\ RAL/2021-02-26-11-29-37.bag"/>
  
   <!-- parameters loading -->
-  <rosparam command="load" file="$(find applications)/params/loc_gpslidar_off.yaml" />
+  <rosparam command="load" file="$(find applications)/params/nav_NVP_GN_offline.yaml" />
   
   <!-- select your robot -->
   <include file="$(find robot_blue)/launch/components/start_tf.launch" />
