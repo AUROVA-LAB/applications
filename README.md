@@ -11,9 +11,9 @@ The "applications" repository is a ROS package that contains files to combine di
 - External ROS packages: [iri_base_algorithm](https://gitlab.iri.upc.edu/labrobotica/ros/iri_core/iri_base_algorithm), "sudo apt-get install ros-noetic-ackermann-\*", "sudo apt-get install ros-noetic-robot-state-\*", "sudo apt-get install ros-noetic-hector-\*".
 - Local ROS packages: [robot_blue](https://github.com/AUROVA-LAB/robot_blue), [aurova_preprocessed](https://github.com/AUROVA-LAB/aurova_preprocessed), [aurova_odom](https://github.com/AUROVA-LAB/aurova_odom), [aurova_localization](https://github.com/AUROVA-LAB/aurova_localization), and [aurova_planning](https://github.com/AUROVA-LAB/aurova_planning).
 
-### Commands to use application:
+### Steps to use application:
 
-- Download bag file.
+- [Download](https://drive.google.com/file/d/1gHVI_dm_issXLnWmB-YW3GMwJ1N8QOri/view?usp=share_link) bag file for this example.
 - Modify "launch/nav_NVP_GN_offline.launch" to provide correct link in "bag_file_1" argument.
 - Modify "params/nav_NVP_GN_offline.yaml" to provide correct link in "url_path" variable.
 - Run next command for localization:
