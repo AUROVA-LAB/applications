@@ -22,3 +22,24 @@ The "applications" repository is a ROS package that contains files to combine di
 roslaunch applications nav_NVP_GN_offline.launch
 ```
 - For autonomous navigation send "2D Nav Goal" from rviz.
+
+## Example 2: Autonomous navigation NVP + GN-fusion (gazebo simulation)
+
+### Requirements to use application:
+
+- System requirements: Ubuntu 20.04 and ROS Noetic.
+- External libraries: [ceres-solver-2.0.0](http://ceres-solver.org/installation.html) (IMPORTANT!! [download](https://drive.google.com/file/d/1acZtn_jaHfj2BVgwaDnQH2Lz-7022F1-/view?usp=share_link) version 2.0.0). Eigen and PCL are usually installed join with ROS.
+- Local libraries: [lib_planning](https://github.com/AUROVA-LAB/lib_planning).
+- External ROS packages: [iri_base_algorithm](https://gitlab.iri.upc.edu/labrobotica/ros/iri_core/iri_base_algorithm), "sudo apt-get install ros-noetic-ackermann-\*", "sudo apt-get install ros-noetic-robot-state-\*", "sudo apt-get install ros-noetic-hector-\*".
+- Local ROS packages: [robot_blue](https://github.com/AUROVA-LAB/robot_blue), [aurova_preprocessed](https://github.com/AUROVA-LAB/aurova_preprocessed), [aurova_odom](https://github.com/AUROVA-LAB/aurova_odom), [aurova_localization](https://github.com/AUROVA-LAB/aurova_localization), and [aurova_planning](https://github.com/AUROVA-LAB/aurova_planning).
+- BLUE model for Gazebo: Follow instructions in [robot_blue_gazebo](https://github.com/AUROVA-LAB/robot_blue_gazebo).
+
+### Steps to use application:
+
+- Modify "params/nav_NVP_GN_gazebo.yaml" to provide correct link in "url_path" variable.
+- Run next command for localization:
+
+```shell
+roslaunch applications nav_NVP_GN_gazebo.launch
+```
+- For autonomous navigation send "2D Nav Goal" from rviz.

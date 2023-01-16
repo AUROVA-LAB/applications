@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+
+  <rosparam command="load" file="$(find applications)/params/nav_NVP_GN_gazebo.yaml" />
+
+  <node name="global_planning" pkg="global_planning" type="global_planning" output="screen" />
+  
+  <node name="local_planning" pkg="local_planning" type="local_planning" output="screen" />
+
+  <!-- select your robot -->
+  <include file="$(find blue_gazebo)/launch/blue.launch" />
+  
+  <node pkg="gps_to_odom" type="gps_to_odom" name="gps_to_odom" output="screen"/>
+  
+  <node pkg="gps_odom_optimization" type="gps_odom_optimization" name="gps_odom_optimization" output="screen"> 
+    <remap from="/gps_odom_optimization/odom" to="odom" />
+    <remap from="/gps_odom_optimization/odometry_gps" to="odometry_gps" />
+    <remap from="/gps_odom_optimization/localization" to="pose_plot" />
+  </node>
+  
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find applications)/rviz/blue_fusion.rviz" />
+  
+</launch>
