@@ -33,6 +33,6 @@
   <!-- Fusion-based localization by optimization process -->
   <include file="$(find gps_odom_optimization)/launch/node.launch" />
   
-  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find applications)/rviz/localization.rviz" />
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find applications)/rviz/nav_real.rviz" />
   
 </launch>
