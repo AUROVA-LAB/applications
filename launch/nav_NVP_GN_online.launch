@@ -18,8 +18,8 @@
 
   <!-- GPS observations in odometry format -->
   <node pkg="gps_to_odom" type="gps_to_odom" name="gps_to_odom" output="screen">
-    <remap from="fix" to="multiGNSS_Loc" />
-    <remap from="rover/fix_velocity" to="multiGNSS_Vel" />
+    <!-- <remap from="fix" to="multiGNSS_Loc" />  -->
+    <!-- <remap from="rover/fix_velocity" to="fix_vel" />  -->
   </node>
   
   <!-- velodyne preprocess -->
