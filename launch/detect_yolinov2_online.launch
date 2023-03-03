@@ -8,6 +8,6 @@
 
   <include file="$(find image2pcl)/launch/image2pcl.launch" />
 
-  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find applications)/rviz/loc_real.rviz" />
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find applications)/rviz/det_real.rviz" />
   
 </launch>
