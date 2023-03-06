@@ -14,6 +14,7 @@
   </node>
   <node name="local_planning" pkg="local_planning" type="local_planning" output="screen" >
         <remap from="pose_plot" to="gps_odom_optimization/localization" />
+        <remap from="velodyne_points" to="ouster/points" />
   </node>
 
   <!-- GPS observations in odometry format -->

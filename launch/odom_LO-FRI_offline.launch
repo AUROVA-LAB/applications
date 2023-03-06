@@ -2,8 +2,7 @@
 <launch>
 
   <!-- rosbags list -->
-  <arg name="bag_file_1" default="/media/blue-onboard/EPVS_512/2023-02-28-12-41-37.bag"/>
-  <arg name="bag_file_11" default="/home/mice85/aurova-lab/labrobotica/dataset/2021-02-26\ Experimentos\ RAL/2021-02-26-11-29-37.bag"/>
+  <arg name="bag_file_1" default="/home/mice85/aurova-lab/labrobotica/dataset/2023-03-03_loc_and_plann/2023-03-03-11-41-05.bag"/>
 
   <!-- velodyne preprocess -->
   <!--<include file="$(find pc2image)/launch/VLP16_image.launch" />-->

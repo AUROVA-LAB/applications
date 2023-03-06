@@ -2,9 +2,8 @@
 <launch>
 
   <!-- rosbags list -->
-  <arg name="bag_file_1" default="/home/mice85/aurova-lab/labrobotica/dataset/2022-11-14\ GPS\ +\ LiDAR/2022-11-14-11-59-49.bag"/>
-  <arg name="bag_file_2" default="/home/blue-onboard/aurova-lab/labrobotica/dataset/2022-11-14\ GPS\ +\ LiDAR/2022-11-14-11-59-49.bag"/>
-
+  <arg name="bag_file_1" default="/home/mice85/aurova-lab/labrobotica/dataset/2023-03-03_loc_and_plann/2023-03-03-11-41-05.bag"/>
+  
   <!-- parameters loading -->
   <rosparam command="load" file="$(find applications)/params/nav_NVP_GN_offline.yaml" />
   
@@ -17,6 +16,7 @@
   </node>
   <node name="local_planning" pkg="local_planning" type="local_planning" output="screen" >
         <remap from="pose_plot" to="gps_odom_optimization/localization" />
+        <remap from="velodyne_points" to="ouster/points" />
   </node>
 
   <!-- GPS observations in odometry format -->
