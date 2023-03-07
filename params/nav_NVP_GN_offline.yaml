@@ -46,6 +46,7 @@ filter_configuration: {
   a: 52.0,
   b: 90.0,
   c: -1.105,
+  lidar_protect: 1.0,
   variance: 0.1,
   radious: 8.0,
   var_factor: 0.4,
@@ -53,8 +54,6 @@ filter_configuration: {
   is_simulation: false,
   is_reconfig: false
 }
-
-#-variables for ackermann_control node
 ackermann_control: {
   max_angle: 24.0,
   delta_angle: 2.0,
@@ -64,14 +63,10 @@ ackermann_control: {
   v_min: 0.4,
   v_max: 1.3,
   kp: 0.6, # if 1.0, proportional disactived
-  margin: 1.0 #from base_link
+  margin: 1.0, #from base_link
+  carrot_ctrl: false,
+  carrot_distance: 4.0
 }
-
-#-variables for ackermann_to_odom node
-odom_in_tf: true
-scan_in_tf: false
-frame_id: "base_link"
-child_id: "os_sensor"
 
 #-variables for gps_to_odom node
 gps_to_odom: {
@@ -79,16 +74,3 @@ gps_to_odom: {
   min_speed: 0.4,
   max_speed: 1.3
 }
-
-#-variables for ekf_fusion node
-ekf_fusion: {
-  frame_id: "map",
-  child_id: "odom",
-  x_model: 0.5,
-  y_model: 0.5,
-  theta_model: 0.1,
-  outlier_mahalanobis: 5.0,
-  min_speed: 1.0,
-  is_simulation: false
-}
-

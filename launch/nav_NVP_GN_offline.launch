@@ -2,7 +2,7 @@
 <launch>
 
   <!-- rosbags list -->
-  <arg name="bag_file_1" default="/home/mice85/aurova-lab/labrobotica/dataset/2023-03-03_loc_and_plann/2023-03-03-11-41-05.bag"/>
+  <arg name="bag_file_1" default="/home/mice85/aurova-lab/labrobotica/dataset/2023-03-06_loc_and_plann/2023-03-06-15-37-47.bag"/>
   
   <!-- parameters loading -->
   <rosparam command="load" file="$(find applications)/params/nav_NVP_GN_offline.yaml" />
