@@ -3,9 +3,9 @@
 
   <include file="$(find image2pcl)/launch/tracker_filtered.launch" />
 
-  <rosparam command="load" file="$(find applications)/params/nav_follow.yaml" />
+  <rosparam command="load" file="$(find applications)/params/nav_follow_online.yaml" />
   <!-- select your robot -->
-  <include file="$(find robot_blue)/launch/start_all_nodes.launch" />
+  <include file="$(find robot_blue)/launch/start_follow_nodes.launch" />
 
   <node type="rviz" name="rviz" pkg="rviz" args="-d $(find applications)/rviz/nav_follow.rviz" />
 

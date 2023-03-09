@@ -3,7 +3,7 @@
 
   <include file="$(find image2pcl)/launch/tracker_filtered.launch" />
 
-  <rosparam command="load" file="$(find applications)/params/nav_follow.yaml" />
+  <rosparam command="load" file="$(find applications)/params/nav_follow_offline.yaml" />
   <!-- select your robot -->
   <include file="$(find robot_blue)/launch/components/start_tf.launch" />
 
