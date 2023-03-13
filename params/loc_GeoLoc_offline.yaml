@@ -1,0 +1,20 @@
+#-global variable
+use_sim_time: true
+
+geo_localization: {
+  lat_zero: 38.38164422311365,
+  lon_zero: -0.5255029920793286,
+
+  frame_id: "map",
+
+  url_to_map: "/home/mice85/aurova-lab/aurova_ws/src/applications/maps/scientific_park_01.osm"
+
+}
+
+
+#-variables for gps_to_odom node
+gps_to_odom: {
+  frame_id: "map",
+  min_speed: 0.4,
+  max_speed: 1.3
+}
