@@ -42,6 +42,7 @@ ackermann_control: {
   kp: 0.6, # if 1.0, proportional disactived
   margin: 1.0, #from base_link
   carrot_ctrl: true,
-  carrot_distance: 4.0
+  carrot_distance: 4.75,
+  carrot_stop_distance: 1.5
 }
 
