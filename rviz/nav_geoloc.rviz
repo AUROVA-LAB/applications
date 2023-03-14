@@ -6,8 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Odometry1/Covariance1/Position1
-        - /Odometry2/Shape1
-        - /PointCloud21
+        - /Localization1/Shape1
       Splitter Ratio: 0.5359116196632385
     Tree Height: 508
   - Class: rviz/Selection
@@ -28,7 +27,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: PointCloud2
+    SyncSource: ""
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -40,7 +39,7 @@ Visualization Manager:
       Cell Size: 1
       Class: rviz/Grid
       Color: 160; 160; 164
-      Enabled: false
+      Enabled: true
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -53,7 +52,7 @@ Visualization Manager:
       Plane: XY
       Plane Cell Count: 10
       Reference Frame: <Fixed Frame>
-      Value: false
+      Value: true
     - Class: rviz/TF
       Enabled: false
       Frame Timeout: 15
@@ -72,86 +71,62 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        blue:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        eje_delantero:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        eje_trasero:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        gps:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        os_sensor:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        os_sensor_visual:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rueda_derecha:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rueda_derecha_disco:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rueda_izquierda:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rueda_izquierda_disco:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        rueda_trasera:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Class: rviz/MarkerArray
-      Enabled: true
+      Enabled: false
       Marker Topic: /visualization
-      Name: MarkerArray
+      Name: Paths
       Namespaces:
-        links: true
-        nodes: true
-        text: true
+        {}
       Queue Size: 1
+      Value: false
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /map
+      Name: Map
+      Namespaces:
+        nodes: true
+      Queue Size: 100
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 239; 41; 41
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: Detections
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.009999999776482582
+      Style: Points
+      Topic: /ground_lines_pc
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
       Value: true
     - Angle Tolerance: 0.10000000149011612
       Class: rviz/Odometry
@@ -170,7 +145,7 @@ Visualization Manager:
           Scale: 1
           Value: true
         Value: true
-      Enabled: true
+      Enabled: false
       Keep: 1
       Name: Odometry
       Position Tolerance: 0.10000000149011612
@@ -187,7 +162,7 @@ Visualization Manager:
         Value: Arrow
       Topic: /odometry_gps
       Unreliable: false
-      Value: true
+      Value: false
     - Angle Tolerance: 0.10000000149011612
       Class: rviz/Odometry
       Covariance:
@@ -207,7 +182,7 @@ Visualization Manager:
         Value: true
       Enabled: false
       Keep: 1
-      Name: Odometry
+      Name: Localization
       Position Tolerance: 0.10000000149011612
       Queue Size: 10
       Shape:
@@ -223,34 +198,6 @@ Visualization Manager:
       Topic: /gps_odom_optimization/localization
       Unreliable: false
       Value: false
-    - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/PointCloud2
-      Color: 239; 41; 41
-      Color Transformer: FlatColor
-      Decay Time: 0
-      Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Min Color: 0; 0; 0
-      Name: PointCloud2
-      Position Transformer: XYZ
-      Queue Size: 10
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.009999999776482582
-      Style: Points
-      Topic: /ground_lines_pc
-      Unreliable: false
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: true
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -278,7 +225,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 49.04718780517578
+      Distance: 36.69676971435547
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -294,9 +241,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5297963619232178
+      Pitch: 1.5697963237762451
       Target Frame: base_link
-      Yaw: 3.244123935699463
+      Yaw: 3.1341195106506348
     Saved: ~
 Window Geometry:
   Displays:

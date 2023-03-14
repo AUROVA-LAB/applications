@@ -8,9 +8,7 @@ geo_localization: {
   frame_id: "map",
 
   url_to_map: "/home/mice85/aurova-lab/aurova_ws/src/applications/maps/scientific_park_01.osm"
-
 }
-
 
 #-variables for gps_to_odom node
 gps_to_odom: {
