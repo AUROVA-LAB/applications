@@ -27,7 +27,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: LiDAR
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -71,18 +71,76 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: false
+      Enabled: true
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        blue:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        eje_delantero:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        eje_trasero:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gps:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        os_sensor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        os_sensor_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rueda_derecha:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rueda_derecha_disco:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rueda_izquierda:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rueda_izquierda_disco:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rueda_trasera:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: false
+      Value: true
       Visual Enabled: true
     - Class: rviz/MarkerArray
       Enabled: false
@@ -97,8 +155,37 @@ Visualization Manager:
       Marker Topic: /map
       Name: Map
       Namespaces:
+        links: true
         nodes: true
       Queue Size: 100
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 252; 175; 62
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: LiDAR
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 1
+      Size (m): 0.009999999776482582
+      Style: Points
+      Topic: /ouster/points
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
       Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
@@ -120,7 +207,7 @@ Visualization Manager:
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
-      Size (Pixels): 3
+      Size (Pixels): 5
       Size (m): 0.009999999776482582
       Style: Points
       Topic: /ground_lines_pc
@@ -225,7 +312,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 36.69676971435547
+      Distance: 34.311058044433594
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -241,9 +328,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5697963237762451
+      Pitch: 1.0747969150543213
       Target Frame: base_link
-      Yaw: 3.1341195106506348
+      Yaw: 5.834116458892822
     Saved: ~
 Window Geometry:
   Displays:
