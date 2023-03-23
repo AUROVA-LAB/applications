@@ -5,7 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
-        - /Detections1
         - /Odometry1/Covariance1/Position1
         - /Localization1/Shape1
       Splitter Ratio: 0.5359116196632385
@@ -28,7 +27,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: Detections
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
