@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <launch>
 
-  <include file="$(find image2pcl)/launch/tracker_filtered.launch" />
+  <include file="$(find tracker_filter)/launch/tracker_filter.launch" />
 
   <rosparam command="load" file="$(find applications)/params/nav_follow_offline.yaml" />
   <!-- select your robot -->
@@ -9,7 +9,7 @@
 
   <node type="rviz" name="rviz" pkg="rviz" args="-d $(find applications)/rviz/nav_follow.rviz" />
 
-  <node name="local_planning" pkg="local_planning" type="local_planning" output="screen" >
+  <node name="local_planning" pkg="local_planning" type="local_planning" >
     <remap from="semilocal_goal" to="target" />
     <remap from="velodyne_points" to="ouster_filtered" />
   </node>
