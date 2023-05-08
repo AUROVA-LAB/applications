@@ -9,7 +9,7 @@
 
   <node type="rviz" name="rviz" pkg="rviz" args="-d $(find applications)/rviz/nav_follow.rviz" />
 
-  <node name="local_planning" pkg="local_planning" type="local_planning" >
+  <node name="local_planning" pkg="local_planning" type="local_planning" output="screen" >
     <remap from="semilocal_goal" to="target" />
     <remap from="velodyne_points" to="ouster_filtered" />
   </node>
