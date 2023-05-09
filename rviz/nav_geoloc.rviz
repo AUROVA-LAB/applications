@@ -27,7 +27,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: DetectionsRaw
+    SyncSource: Landmarks
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -253,8 +253,8 @@ Visualization Manager:
       Axis: Z
       Channel Name: intensity
       Class: rviz/PointCloud2
-      Color: 255; 255; 255
-      Color Transformer: Intensity
+      Color: 92; 53; 102
+      Color Transformer: FlatColor
       Decay Time: 0
       Enabled: true
       Invert Rainbow: false
@@ -264,9 +264,9 @@ Visualization Manager:
       Position Transformer: XYZ
       Queue Size: 10
       Selectable: true
-      Size (Pixels): 3
+      Size (Pixels): 15
       Size (m): 0.009999999776482582
-      Style: Flat Squares
+      Style: Points
       Topic: /landmarks
       Unreliable: false
       Use Fixed Frame: true
