@@ -50,7 +50,7 @@ ackermann_control: {
 
 tracker_filter: {
   metrics: false,
-  label_file: "/media/alolivas/MSI_500/follow_experiments/label_follow1.txt",
-  output_file: "/media/alolivas/MSI_500/follow_experiments/metrics_folllow1.txt"
+  label_file: "/media/alolivas/MSI_500/follow_experiments/label_follow2.txt",
+  output_file: "/media/alolivas/MSI_500/follow_experiments/metrics_folllow2_all.txt"
 }
 

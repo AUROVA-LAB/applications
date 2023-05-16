@@ -482,6 +482,37 @@ Visualization Manager:
       Topic: /ground_truth
       Unreliable: false
       Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.10000000149011612
+      Class: rviz/PoseWithCovariance
+      Color: 3; 194; 255
+      Covariance:
+        Orientation:
+          Alpha: 0.5
+          Color: 255; 255; 127
+          Color Style: Unique
+          Frame: Local
+          Offset: 1
+          Scale: 1
+          Value: true
+        Position:
+          Alpha: 0.30000001192092896
+          Color: 204; 51; 204
+          Scale: 1
+          Value: true
+        Value: true
+      Enabled: true
+      Head Length: 0.30000001192092896
+      Head Radius: 0
+      Name: PoseWithCovariance
+      Queue Size: 10
+      Shaft Length: 0.25
+      Shaft Radius: 0.25
+      Shape: Arrow
+      Topic: /m2track
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -509,7 +540,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 17.49327278137207
+      Distance: 24.878747940063477
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -517,17 +548,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 0.6978986263275146
-        Y: 0.23408125340938568
-        Z: -0.21616648137569427
+        X: 2.882816791534424
+        Y: -0.8237336874008179
+        Z: -2.6795120239257812
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.9647956490516663
+      Pitch: 1.1647952795028687
       Target Frame: base_link
-      Yaw: 2.9741246700286865
+      Yaw: 3.034121513366699
     Saved: ~
 Window Geometry:
   Displays:
