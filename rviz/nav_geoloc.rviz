@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /OdometryGPS1/Covariance1/Position1
-        - /Localization1/Shape1
       Splitter Ratio: 0.5359116196632385
     Tree Height: 508
   - Class: rviz/Selection
@@ -27,7 +26,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: Landmarks
+    SyncSource: Detections
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -256,7 +255,7 @@ Visualization Manager:
       Color: 92; 53; 102
       Color Transformer: FlatColor
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Min Color: 0; 0; 0
@@ -271,7 +270,7 @@ Visualization Manager:
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -326,11 +325,11 @@ Visualization Manager:
         Alpha: 1
         Axes Length: 1
         Axes Radius: 0.10000000149011612
-        Color: 114; 159; 207
-        Head Length: 0.30000001192092896
-        Head Radius: 0.20000000298023224
-        Shaft Length: 1
-        Shaft Radius: 0.10000000149011612
+        Color: 0; 255; 0
+        Head Length: 0.5
+        Head Radius: 0.6000000238418579
+        Shaft Length: 0.5
+        Shaft Radius: 0.30000001192092896
         Value: Arrow
       Topic: /odometry_gps
       Unreliable: false
@@ -361,7 +360,7 @@ Visualization Manager:
         Alpha: 1
         Axes Length: 1
         Axes Radius: 0.10000000149011612
-        Color: 239; 41; 41
+        Color: 255; 25; 0
         Head Length: 0.5
         Head Radius: 0.6000000238418579
         Shaft Length: 0.5
@@ -397,7 +396,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 57.62898635864258
+      Distance: 34.97865676879883
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
