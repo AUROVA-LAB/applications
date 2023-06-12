@@ -24,6 +24,8 @@
     <!-- <remap from="fix" to="multiGNSS_Loc" />  -->
     <!-- <remap from="rover/fix_velocity" to="fix_vel" />  -->
   </node>
+
+  <include file="$(find lidar_obstacle_detection)/launch/ouster_obstacles.launch"/>
   
   <!-- velodyne preprocess -->
   <!--<include file="$(find pc2image)/launch/VLP16_image.launch" />-->

@@ -13,5 +13,9 @@
     <remap from="semilocal_goal" to="target" />
     <remap from="velodyne_points" to="ouster_filtered" />
   </node>
+
+  <include file="$(find lidar_obstacle_detection)/launch/ouster_obstacles.launch">
+    <arg name="pcTopic" value="/ouster_filtered"/>
+  </include> 
   
 </launch>
