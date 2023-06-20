@@ -2,8 +2,11 @@
 <launch>
 
   <!-- rosbags list -->
-  <arg name="bag_file_1" default="/home/mice85/aurova-lab/labrobotica/dataset/2023-03-06_loc_and_plann/2023-03-06-15-37-47.bag"/>
-  <arg name="bag_file_2" default="/home/mice85/aurova-lab/labrobotica/dataset/2023-03-16_circuit02_no-rtk/2023-03-16-11-25-17.bag"/>
+  <arg name="bag_file_1" default="/home/mice85/aurova-lab/labrobotica/dataset/2023-06-13_circuits_12345_no-rtk/2023-06-13-08-44-15.bag"/>
+  <arg name="bag_file_2" default="/home/mice85/aurova-lab/labrobotica/dataset/2023-06-13_circuits_12345_no-rtk/2023-06-13-08-51-47.bag"/>
+  <arg name="bag_file_3" default="/home/mice85/aurova-lab/labrobotica/dataset/2023-06-13_circuits_12345_no-rtk/2023-06-13-09-09-15.bag"/>
+  <arg name="bag_file_4" default="/home/mice85/aurova-lab/labrobotica/dataset/2023-06-13_circuits_12345_no-rtk/2023-06-13-09-17-13.bag"/>
+  <arg name="bag_file_5" default="/home/mice85/aurova-lab/labrobotica/dataset/2023-06-13_circuits_12345_no-rtk/2023-06-13-09-25-07.bag"/>
   
   <!-- parameters loading -->
   <rosparam command="load" file="$(find applications)/params/loc_GeoLoc_offline.yaml" />
@@ -26,7 +29,7 @@
   <node pkg="merged_channels_ouster" name="merge_channels" type="merge_channels_ouster.py"></node>
   <include file="$(find image2pcl)/launch/image2pcl.launch" />
 
-  <node pkg="rosbag" type="play" name="rosbagplay" args="$(arg bag_file_1) --clock -d 5 -r 0.5" required="true" />
+  <node pkg="rosbag" type="play" name="rosbagplay" args="$(arg bag_file_1) --clock -d 5 -r 0.5 -s 0" required="true" />
   <node type="rviz" name="rviz" pkg="rviz" args="-d $(find applications)/rviz/nav_geoloc.rviz" />
   
 </launch>

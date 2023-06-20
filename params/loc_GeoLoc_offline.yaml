@@ -8,6 +8,11 @@ geo_localization: {
   frame_id: "map",
   sample_distance: 0.5,
 
+  window_size: 30,
+
+  radious_dt: 15.0,
+  radious_lm: 22.5,
+
   url_to_map: "/home/mice85/aurova-lab/aurova_ws/src/applications/maps/scientific_park_01.osm"
 }
 
