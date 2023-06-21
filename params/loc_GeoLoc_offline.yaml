@@ -2,18 +2,27 @@
 use_sim_time: true
 
 geo_localization: {
+
+  # Geo-localization local parameters
   lat_zero: 38.38164422311365,
   lon_zero: -0.5255029920793286,
-
   frame_id: "map",
+  margin_asso_constraints: 20,
+  margin_gnss_constraints: 12,
+  margin_gnss_distance: 1.0,
+
+  # Data management library parameters
   sample_distance: 0.5,
-
-  window_size: 30,
-
+  threshold_asso: 1.0,
+  voxel_asso: 1.5,
   radious_dt: 15.0,
   radious_lm: 22.5,
+  url_to_map: "/home/mice85/aurova-lab/aurova_ws/src/applications/maps/scientific_park_01.osm",
+  z_weight: 0.0,
 
-  url_to_map: "/home/mice85/aurova-lab/aurova_ws/src/applications/maps/scientific_park_01.osm"
+  # Optimization process library parameters
+  window_size: 30,
+  max_num_iterations_op: 100
 }
 
 #-variables for gps_to_odom node
