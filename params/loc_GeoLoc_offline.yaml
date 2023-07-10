@@ -20,7 +20,7 @@ geo_localization: {
   url_to_map: "/home/mice85/aurova-lab/aurova_ws/src/applications/maps/scientific_park_01.osm",
   acum_tf_da: 10,
   acum_tf_varfactor: 2.0,
-  z_weight: 0.0,
+  z_weight: 1.0,
 
   # Optimization process library parameters
   window_size: 30,
