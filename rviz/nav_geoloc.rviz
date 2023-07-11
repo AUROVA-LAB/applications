@@ -235,8 +235,8 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 10
-      Size (m): 0.009999999776482582
-      Style: Points
+      Size (m): 0.5
+      Style: Spheres
       Topic: /detections
       Unreliable: false
       Use Fixed Frame: true
@@ -291,8 +291,8 @@ Visualization Manager:
       Queue Size: 10
       Selectable: true
       Size (Pixels): 10
-      Size (m): 0.009999999776482582
-      Style: Points
+      Size (m): 0.75
+      Style: Spheres
       Topic: /corregistered
       Unreliable: false
       Use Fixed Frame: true
@@ -430,7 +430,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 39.679046630859375
+      Distance: 36.52927780151367
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
