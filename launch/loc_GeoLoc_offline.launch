@@ -29,7 +29,7 @@
   <node pkg="merged_channels_ouster" name="merge_channels" type="merge_channels_ouster.py"></node>
   <include file="$(find image2pcl)/launch/image2pcl.launch" />
 
-  <node pkg="rosbag" type="play" name="rosbagplay" args="$(arg bag_file_5) --clock -d 5 -r 0.5 -s 100" required="true" />
+  <node pkg="rosbag" type="play" name="rosbagplay" args="$(arg bag_file_1) --clock -d 5 -r 0.5 -s 0" required="true" />
   <node type="rviz" name="rviz" pkg="rviz" args="-d $(find applications)/rviz/nav_geoloc.rviz" />
   
 </launch>
