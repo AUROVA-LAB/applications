@@ -34,8 +34,14 @@ geo_localization: {
 
   odom_preweight: 60.0,
 
-  url_file_out: "/home/mice85/aurova-lab/aurova_ws/src/applications/data/trajectory/method_G/C1/",
-  save_data: true
+  # Save data for evaluation
+  url_file_out: "/home/mice85/aurova-lab/aurova_ws/src/applications/data/ground_truth/C1/",
+  save_data: false,
+
+  # Ground truth configuration.
+  ground_truth: true,
+  gt_last_frame: 3465,
+  gt_key_frames: [340, 600, 930, 1187, 2055, 2280, 2647, 2915, 2077, 3300] # C1
 }
 
 #-variables for gps_to_odom node
