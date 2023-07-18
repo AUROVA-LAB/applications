@@ -384,9 +384,9 @@ Visualization Manager:
           Color: 204; 51; 204
           Scale: 1
           Value: true
-        Value: true
-      Enabled: false
-      Keep: 1
+        Value: false
+      Enabled: true
+      Keep: 100000
       Name: Localization
       Position Tolerance: 0.10000000149011612
       Queue Size: 10
@@ -395,14 +395,14 @@ Visualization Manager:
         Axes Length: 1
         Axes Radius: 0.10000000149011612
         Color: 255; 25; 0
-        Head Length: 0.5
-        Head Radius: 0.6000000238418579
+        Head Length: 0
+        Head Radius: 0
         Shaft Length: 0.5
-        Shaft Radius: 0.30000001192092896
+        Shaft Radius: 0.20000000298023224
         Value: Arrow
       Topic: /localization
       Unreliable: false
-      Value: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
@@ -430,7 +430,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 36.52927780151367
+      Distance: 38.77381896972656
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -446,9 +446,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.4647964239120483
+      Pitch: 1.5697963237762451
       Target Frame: base_link
-      Yaw: 4.694122791290283
+      Yaw: 4.159114837646484
     Saved: ~
 Window Geometry:
   Displays:

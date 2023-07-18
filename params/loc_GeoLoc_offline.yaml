@@ -32,7 +32,10 @@ geo_localization: {
   k: 20.0,
   m: 12.0,
 
-  odom_preweight: 60.0
+  odom_preweight: 60.0,
+
+  url_file_out: "/home/mice85/aurova-lab/aurova_ws/src/applications/data/trajectory/method_G/C1/",
+  save_data: true
 }
 
 #-variables for gps_to_odom node
