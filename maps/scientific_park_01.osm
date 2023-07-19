@@ -1649,6 +1649,19 @@
   <node id='-207105' action='modify' visible='true' lat='38.38353923637' lon='-0.51726803251' />
   <node id='-207106' action='modify' visible='true' lat='38.38340782949' lon='-0.51721707053' />
   <node id='-207107' action='modify' visible='true' lat='38.38338943251' lon='-0.51730088957' />
+  <node id='-207113' action='modify' visible='true' lat='38.38313543339' lon='-0.52557342985' />
+  <node id='-207114' action='modify' visible='true' lat='38.38313325196' lon='-0.52556865057' />
+  <node id='-207115' action='modify' visible='true' lat='38.3832974543' lon='-0.5256417009' />
+  <node id='-207116' action='modify' visible='true' lat='38.3833167266' lon='-0.5256489967' />
+  <node id='-207117' action='modify' visible='true' lat='38.38321733116' lon='-0.52522317841' />
+  <node id='-207118' action='modify' visible='true' lat='38.38322112191' lon='-0.52522138635' />
+  <node id='-207119' action='modify' visible='true' lat='38.38331160989' lon='-0.52525927329' />
+  <node id='-207120' action='modify' visible='true' lat='38.38332213292' lon='-0.52525719933' />
+  <node id='-207121' action='modify' visible='true' lat='38.38331595309' lon='-0.52526109177' />
+  <node id='-207122' action='modify' visible='true' lat='38.38336589465' lon='-0.52509348045' />
+  <node id='-207123' action='modify' visible='true' lat='38.3833652539' lon='-0.52508334649' />
+  <node id='-207124' action='modify' visible='true' lat='38.38331119418' lon='-0.52468766038' />
+  <node id='-207125' action='modify' visible='true' lat='38.38334678691' lon='-0.52468869312' />
   <way id='-102565' action='modify' visible='true'>
     <nd ref='-189896' />
     <nd ref='-198522' />
@@ -1710,7 +1723,9 @@
     <nd ref='-189886' />
     <nd ref='-189885' />
     <nd ref='-189884' />
+    <nd ref='-207125' />
     <nd ref='-157841' />
+    <nd ref='-207124' />
     <nd ref='-190638' />
     <nd ref='-157842' />
     <nd ref='-157843' />
@@ -1729,11 +1744,22 @@
     <nd ref='-190632' />
     <nd ref='-157850' />
     <nd ref='-157851' />
+    <nd ref='-207116' />
     <nd ref='-190321' />
+    <nd ref='-207115' />
+    <nd ref='-207113' />
     <nd ref='-190303' />
+    <nd ref='-207114' />
+    <nd ref='-207117' />
     <nd ref='-190304' />
+    <nd ref='-207118' />
+    <nd ref='-207119' />
+    <nd ref='-207121' />
     <nd ref='-190305' />
+    <nd ref='-207120' />
+    <nd ref='-207122' />
     <nd ref='-190306' />
+    <nd ref='-207123' />
     <nd ref='-190307' />
     <nd ref='-190308' />
     <nd ref='-190309' />
