@@ -63,3 +63,38 @@ roslaunch applications nav_NVP_GN_gazebo.launch
 roslaunch applications nav_NVP_GN_online.launch
 ```
 - For autonomous navigation send "2D Nav Goal" from rviz.
+
+## Example 4: LiLO: Lite LiDAR Odoemtry basen on SRI(spherical Range Image)  
+
+### Requirements to use application:
+
+- System requirements: Ubuntu 20.04 and ROS Noetic.
+- External libraries: [ceres-solver-2.0.0](http://ceres-solver.org/installation.html) (IMPORTANT!! [download](https://drive.google.com/file/d/1acZtn_jaHfj2BVgwaDnQH2Lz-7022F1-/view?usp=share_link) version 2.0.0). Eigen and PCL are usually installed join with ROS.
+- ROS packages: "sudo apt-get install ros-noetic-ackermann-\*",  "sudo apt-get install ros-noetic-hector-\*". [pc2image](https://github.com/AUROVA-LAB/aurova_preprocessed/tree/master/pc2image), [odom_estimation_pc](https://github.com/AUROVA-LAB/aurova_odom/tree/main/odom_estimation_pc)
+### Steps to use application:
+The pc2iamge package needs an input point cloud type sensor_msgs/PointCloud2 (We have tested it with the Velodyne VLP16 sensor and the Ouster OS1-128 sensor). You can run the launch:
+```
+roslauch VLP16_image.launch 
+```
+or 
+```
+roslauch ouster_image.launch.
+```
+
+For odometry estimation you can use the package odom_estimation_pc. You can run the lauch:
+```
+roslauch odomEstimation_VLP16.launch
+```
+or
+```
+roslauch odomEstimation_ouster.launch
+```
+You can also test the package with Kitti. To do this you have to run it:
+In the pc2image package: 
+```
+roslaunch Kitti_pc2image.launch
+```
+In the package odom_estimation_pc: 
+```
+roslaunch odomEstimation_KITTI_dataset.launch
+```
