@@ -1,0 +1,61 @@
+#-global variable
+use_sim_time: true
+
+geo_localization: {
+
+  # Geo-localization local parameters
+  lat_zero: 48.97253396005, # Sec. 10
+  lon_zero: 8.4785980847297,
+  frame_id: "map",
+  margin_asso_constraints: 20,
+  margin_gnss_constraints: 12,
+  margin_gnss_distance: 1.0,
+
+  # Data management library parameters
+  sample_distance: 0.5,
+  threshold_asso: 1.0,
+  voxel_asso: 1.5,
+  radious_dt: 15.0,
+  radious_lm: 22.5,
+  url_to_map: "/home/mice85/aurova-lab/aurova_ws/src/applications/maps/kitti_seq10.osm",
+  acum_tf_da: 10,
+  acum_tf_varfactor: 2.0,
+  z_weight: 1.0,
+
+  # Optimization process library parameters
+  window_size: 30,
+  max_num_iterations_op: 100,
+
+  # Sigmoid options for weights
+  type: 1, # 1. phi = x - lambda // 2. phi = (x/k)m - m/2
+  lambda: 10.0,
+  k: 50.0,
+  m: 12.0,
+
+  odom_preweight: 60.0,
+
+  # Save data for evaluation
+  out_data: "/home/mice85/aurova-lab/aurova_ws/src/applications/data/trajectory/C2/method_E/",
+  out_map:  "/home/mice85/aurova-lab/aurova_ws/src/applications/data/map/",
+  save_map: false,
+  save_data: false,
+
+  # Ground truth configuration.
+  ground_truth: false,
+  out_gt: "/home/mice85/aurova-lab/aurova_ws/src/applications/data/ground_truth/C4/",
+  #gt_last_frame: 3465,
+  #gt_key_frames: [340, 600, 930, 1187, 2055, 2280, 2647, 2915, 2077, 3300] # C1
+  #gt_last_frame: 4134,
+  #gt_key_frames: [115, 150, 960, 1440, 1620, 2042, 2171, 2492, 2992, 3305] # C2
+  #gt_last_frame: 4180,
+  #gt_key_frames: [275, 540, 816, 1155, 1410, 2170, 2430, 2590, 3110, 3954] # C3
+  gt_last_frame: 3886,
+  gt_key_frames: [310, 810, 1140, 1555, 1790, 1870, 1977, 2610, 2880, 3420] # C4
+}
+
+#-variables for gps_to_odom node
+gps_to_odom: {
+  frame_id: "map",
+  min_speed: 0.4,
+  max_speed: 1.3
+}
