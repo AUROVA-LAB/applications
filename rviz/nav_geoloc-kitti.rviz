@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /OdometryGps1/Covariance1
-        - /Localization1/Shape1
       Splitter Ratio: 0.5359116196632385
     Tree Height: 587
   - Class: rviz/Selection
@@ -373,10 +372,10 @@ Visualization Manager:
         Axes Length: 1
         Axes Radius: 0.10000000149011612
         Color: 255; 255; 0
-        Head Length: 0
-        Head Radius: 0
+        Head Length: 0.5
+        Head Radius: 0.699999988079071
         Shaft Length: 1
-        Shaft Radius: 0.5
+        Shaft Radius: 0.4000000059604645
         Value: Arrow
       Topic: /localization
       Unreliable: false
@@ -424,9 +423,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.8447964787483215
+      Pitch: 0.6897966265678406
       Target Frame: base_link
-      Yaw: 1.5267788171768188
+      Yaw: 2.321779727935791
     Saved: ~
 Window Geometry:
   Displays:
