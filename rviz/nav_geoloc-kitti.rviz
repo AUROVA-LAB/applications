@@ -5,6 +5,8 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /OdometryGps1/Covariance1
+        - /Localization1/Shape1
       Splitter Ratio: 0.5359116196632385
     Tree Height: 587
   - Class: rviz/Selection
@@ -303,8 +305,8 @@ Visualization Manager:
         Color: 0; 255; 0
         Head Length: 0
         Head Radius: 0
-        Shaft Length: 1
-        Shaft Radius: 1
+        Shaft Length: 0.10000000149011612
+        Shaft Radius: 0.5
         Value: Arrow
       Topic: /odometry_gps
       Unreliable: false
@@ -374,7 +376,7 @@ Visualization Manager:
         Head Length: 0
         Head Radius: 0
         Shaft Length: 1
-        Shaft Radius: 1
+        Shaft Radius: 0.5
         Value: Arrow
       Topic: /localization
       Unreliable: false
@@ -406,7 +408,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 114.59066009521484
+      Distance: 33.34828186035156
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -422,9 +424,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.1597970724105835
+      Pitch: 0.8447964787483215
       Target Frame: base_link
-      Yaw: 2.316767692565918
+      Yaw: 1.5267788171768188
     Saved: ~
 Window Geometry:
   Displays:

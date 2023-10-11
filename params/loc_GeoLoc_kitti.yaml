@@ -6,7 +6,11 @@ geo_localization: {
   # Geo-localization local parameters
   lat_zero: 48.97253396005, # Sec. 10
   lon_zero: 8.4785980847297,
-  frame_id: "map",
+  world_id: "utm",
+  map_id: "map",
+  odom_id: "odom",
+  base_id: "imu_link",
+  lidar_id: "velo_link",
   margin_asso_constraints: 20,
   margin_gnss_constraints: 12,
   margin_gnss_distance: 1.0,
