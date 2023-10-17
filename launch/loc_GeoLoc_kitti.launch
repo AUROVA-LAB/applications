@@ -13,6 +13,9 @@
   <!-- Fusion-based localization by optimization process -->
   <include file="$(find geo_localization)/launch/node.launch" />  
 
+  <!-- Nodes to ground lines detection -->
+  <node pkg="merged_channels_ouster" name="merge_channels" type="merge_channels_ouster.py"></node>
+
   <node pkg="rosbag" type="play" name="rosbagplay" args="$(arg bag_file_1) --clock -d 5 -r 1.0 -s 0" required="true" />
   <node type="rviz" name="rviz" pkg="rviz" args="-d $(find applications)/rviz/nav_geoloc-kitti.rviz" />
   
