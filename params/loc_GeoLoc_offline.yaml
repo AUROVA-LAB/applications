@@ -6,6 +6,8 @@ geo_localization: {
   # Geo-localization local parameters
   lat_zero: 38.38164422311365,
   lon_zero: -0.5255029920793286,
+  offset_map_x: 0.0,
+  offset_map_y: 0.0,
   world_id: "utm",
   map_id: "map",
   odom_id: "odom",
@@ -37,6 +39,7 @@ geo_localization: {
   m: 12.0,
 
   odom_preweight: 60.0,
+  asso_preweight: -1, # if w<0 then dynamically adjusted.
 
   # Save data for evaluation
   out_data: "/home/mice85/aurova-lab/aurova_ws/src/applications/data/trajectory/C2/method_E/",

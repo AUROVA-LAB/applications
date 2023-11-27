@@ -6,6 +6,8 @@ geo_localization: {
   # Geo-localization local parameters
   lat_zero: 48.97253396005, # Sec. 10
   lon_zero: 8.4785980847297,
+  offset_map_x: 2.0,
+  offset_map_y: 0.7,
   world_id: "utm",
   map_id: "map",
   odom_id: "odom",
@@ -19,8 +21,8 @@ geo_localization: {
   sample_distance: 0.5,
   threshold_asso: 1.0,
   voxel_asso: 1.5,
-  radious_dt: 15.0,
-  radious_lm: 22.5,
+  radious_dt: 30.0,
+  radious_lm: 30.0,
   url_to_map: "/home/mice85/aurova-lab/aurova_ws/src/applications/maps/kitti_seq10.osm",
   acum_tf_da: 10,
   acum_tf_varfactor: 2.0,
@@ -37,6 +39,7 @@ geo_localization: {
   m: 12.0,
 
   odom_preweight: 60.0,
+  asso_preweight: -1, # if w<0 then dynamically adjusted.
 
   # Save data for evaluation
   out_data: "/home/mice85/aurova-lab/aurova_ws/src/applications/data/trajectory/C2/method_E/",
