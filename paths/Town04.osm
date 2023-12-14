@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="CGImap 0.7.5 (16168 thorn-03.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
+ <bounds minlat="-0.003" minlon="-0.0001" maxlat="0.0001" maxlon="0.004"/>
+
+ <node id="0" lat="0.0016259506640352583" lon="0.0012217087864025492" />
+ <node id="1" lat="0.002155956681392013" lon="0.0017427316511918714" />
+ <node id="2" lat="0.00214697352853932" lon="0.0018684957909686046" />
+ <node id="3" lat="0.002084091458698367" lon="0.0020032430835865327" />
+ <node id="4" lat="0.0018774789434843342" lon="0.002012226236427728" />
+ <node id="5" lat="0.0016304422404544994" lon="0.0020526504242131065" />
+ <node id="6" lat="0.0018640042142124003" lon="0.0018684957909686046" />
+ <node id="7" lat="0.002281720821073918" lon="0.001747223227612469" />
+ <node id="8" lat="0.0016259506640352583" lon="0.0010869614937846208" />
+
+ <way id="0">
+  <nd ref="0"/>
+  <nd ref="1"/>
+  <nd ref="2"/>
+  <nd ref="3"/>
+  <nd ref="4"/>
+  <nd ref="5"/>
+  <nd ref="4"/>
+  <nd ref="6"/>
+  <nd ref="2"/>
+  <nd ref="1"/>
+  <nd ref="7"/>
+  <nd ref="8"/>
+ </way>
+
+ <way id="1">
+  <nd ref="4"/>
+  <nd ref="6"/>
+  <nd ref="2"/>
+  <nd ref="1"/>
+  <nd ref="7"/>
+  <nd ref="8"/>
+ </way>
+
+ <way id="2">
+  <nd ref="7"/>
+  <nd ref="8"/>
+  <nd ref="0"/>
+ </way>
+
+</osm>
