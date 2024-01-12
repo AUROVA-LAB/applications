@@ -1,9 +1,28 @@
+#-variables for global_planning node
+global_planning: {
+  url_path: "/home/alolivas/aurova-lab/aurova_ws/src/applications/paths/Town01.osm",
+  
+  url_file_out: "/home/mice85/aurova-lab/aurova_ws/src/application_navigation/output_files/",
+  
+  closed_loop: [3, 2, 1, 0],
+  
+  save_data: false,
+  frame_id: "map",
+  var_x: 0.2,
+  var_y: 0.01,
+  var_z: 100.0, #0.01,
+  var_w: 0.1,
+  type_dist: "E",
+  rad_reached: 4.0,
+  operation_mode: 2, # 1) follow path to global goal. 2) follow closed loop 3) bypass global goal
+  stop_code: 10.0 # in 'z' coordinate
+}
 
 geo_localization: {
 
   # Geo-localization local parameters
-  lat_zero: 0.0016351376429923903,
-  lon_zero: 0.001221979092454228,
+  lat_zero: 38.38164422311365,
+  lon_zero: -0.5255029920793286,
   offset_map_x: 0.0,
   offset_map_y: 0.0,
   world_id: "utm",
@@ -12,7 +31,7 @@ geo_localization: {
   base_id: "base_link/gnss",
   lidar_id: "base_link/lidar",
   margin_asso_constraints: 20,
-  margin_gnss_constraints: 12,
+  margin_gnss_constraints: 4,
   margin_gnss_distance: 1.0,
 
   # Data management library parameters
@@ -21,7 +40,7 @@ geo_localization: {
   voxel_asso: 1.5,
   radious_dt: 15.0,
   radious_lm: 22.5,
-  url_to_map: "/home/mice85/aurova-lab/aurova_ws/src/applications/paths/Town04.osm",
+  url_to_map: "/home/mice85/aurova-lab/aurova_ws/src/applications/paths/Town01.osm",
   acum_tf_da: 10,
   acum_tf_varfactor: 2.0,
   z_weight: 1.0,
@@ -61,29 +80,10 @@ geo_localization: {
 #-variables for gps_to_odom node
 gps_to_odom: {
   frame_id: "map",
-  min_speed: 0.4,
+  min_speed: 0.2,
   max_speed: 1.3
 }
 
-#-variables for global_planning node
-global_planning: {
-  url_path: "/home/alolivas/aurova-lab/aurova_ws/src/applications/paths/Town04.osm",
-  
-  url_file_out: "/home/mice85/aurova-lab/aurova_ws/src/application_navigation/output_files/",
-  
-  closed_loop: [0, 1, 17, 16, 15, 6, 5, 0],
-  
-  save_data: false,
-  frame_id: "map",
-  var_x: 0.2,
-  var_y: 0.01,
-  var_z: 100.0, #0.01,
-  var_w: 0.1,
-  type_dist: "E",
-  rad_reached: 4.0,
-  operation_mode: 1, # 1) follow path to global goal. 2) follow closed loop 3) bypass global goal
-  stop_code: 10.0 # in 'z' coordinate
-}
 local_planning: {
   frame_id: "map",
   frame_lidar: "base_link/lidar",
@@ -121,8 +121,15 @@ ackermann_control: {
   delta_arc: 1.0,
   max_arc: 2.0,
   v_min: 0.4,
-  v_max: 0.8,
+  v_max: 1.3,
   kp: 0.3, # if 1.0, proportional disactived
-  margin: 0.5, #from base_link
+  margin: 1.0, #from base_link
   carrot_ctrl: false
+}
+
+dynamic_obstacles_prediction: {
+  filter_radious: 1.2,
+  keep_time: 2.0,
+  time_per_distance: 0.77,
+  safety_margin: 0.5
 }
