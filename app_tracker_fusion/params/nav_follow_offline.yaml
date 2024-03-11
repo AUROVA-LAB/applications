@@ -1,0 +1,58 @@
+#-global variable
+use_sim_time: true
+
+global_planning/stop_code: 10.0 # in 'z' coordinate
+
+
+#-variables for local_planning node
+local_planning: {
+  frame_id: "os_sensor",
+  frame_lidar: "os_sensor",
+  save_data: false,
+  url_file_out: "/home/alolivas/aurova-lab/aurova_ws/src/application_navigation/output_files/scans/",
+  external_obstacle_detection: true
+}
+lidar_configuration: {
+  max_elevation_angle: 112.5,
+  min_elevation_angle: 67.5,
+  max_azimuth_angle: 360.0,
+  min_azimuth_angle: 0.0,
+  grid_azimuth_angular_resolution: 0.18,
+  grid_elevation_angular_resolution: 0.35
+}
+filter_configuration: {
+  max_range: 100.0,
+  min_range: 0.0,
+  a: 52.0,
+  b: 90.0,
+  c: -1.105,
+  lidar_protect: 1.0,
+  variance: 0.1,
+  radious: 8.0,
+  var_factor: 0.4,
+  ground_in_sim: -0.5,
+  is_simulation: false,
+  is_reconfig: false
+}
+ackermann_control: {
+  max_angle: 24.0,
+  delta_angle: 2.0,
+  v_length: 1.05,
+  delta_arc: 1.0,
+  max_arc: 2.0,
+  v_min: 0.4,
+  v_max: 1.3,
+  kp: 0.6, # if 1.0, proportional disactived
+  margin: 1.0, #from base_link
+  carrot_ctrl: true,
+  carrot_distance: 4.0,
+  carrot_stop_distance: 1.5
+}
+
+tracker_filter: {
+  metrics: false,
+  mute_image_trackers: false,
+  label_file: "/media/alolivas/MSI_500/follow_experiments/label_follow4.txt",
+  output_file: "/media/alolivas/MSI_500/follow_experiments/metrics_follow4.txt"
+}
+

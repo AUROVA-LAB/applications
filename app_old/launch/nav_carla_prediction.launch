@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<launch>
+
+  <rosparam command="load" file="$(find app_old)/params/nav_carla.yaml" />
+
+  <!-- For spawning the vehicle in carla, do not use the OpenStreetMap, use the one with the locations in XYZ -->
+  <arg name="map" default="/media/alolivas/MSI_500/aurova_carla/carla/PythonAPI/aurova/routes/Town05.xml"/>
+  <arg name="start_node" default="0" />
+  <!--  -->
+
+  <node name="global_planning" pkg="global_planning" type="global_planning" output="screen">
+    <remap from="pose_plot" to="localization" />
+  </node>
+
+  <include file="$(find lidar_obstacle_detection)/launch/ouster_obstacles.launch">
+    <arg name="pcTopic" value="/carla/base_link/lidar"/>
+  </include> 
+
+  <node name="dynamic_obstacles_prediction" pkg="dynamic_obstacles_prediction" type="dynamic_obstacles_prediction_node" output="screen">
+    <remap from="/obstacles_position" to="/carla/base_link/walker_list" />
+  </node>
+  
+  <node name="local_planning" pkg="local_planning" type="local_planning" >
+    <remap from="ground_obstacles" to="/ground_prediction_obstacles" />
+    <remap from="ouster_obstacles" to="/ouster_prediction_obstacles" />
+    <remap from="velodyne_points" to="/carla/base_link/lidar" />
+    <remap from="ackermann_cmd" to="/carla/base_link/ackermann_cmd" />
+    <remap from="pose_plot" to="localization" />
+  </node>
+  
+  <node pkg="gps_to_odom" type="gps_to_odom" name="gps_to_odom">
+    <remap from="/fix" to="/carla/base_link/gnss" />
+  </node>
+  
+  <!-- Fusion-based localization by optimization process -->
+  <include file="$(find geo_localization)/launch/node.launch" >
+    <arg name="output" value="log"/>
+  </include>
+
+  <include file="$(find pc2image)/launch/carla_image.launch" />
+  <include file="$(find odom_estimation_pc)/launch/odomEstimation_carla.launch" />   
+
+  <include file="$(find carla_ackermann_control)/launch/carla_ackermann_control_with_vehicle.launch" >
+    <arg name="map" value="$(arg map)" />
+    <arg name="start_node" value="$(arg start_node)" />
+  </include>
+
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find app_old)/rviz/nav_carla.rviz" />
+  
+</launch>
