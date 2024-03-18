@@ -23,7 +23,7 @@ geo_localization: {
   voxel_asso: 1.5,
   radious_dt: 15.0,
   radious_lm: 22.5,
-  url_to_map: "/home/mice85/aurova-lab/aurova_ws/src/applications/app_old/maps/scientific_park_01.osm",
+  url_to_map: "/home/aurova/aurova-lab/aurova_ws/src/applications/app_old/maps/scientific_park_01.osm",
   acum_tf_da: 10,
   acum_tf_varfactor: 2.0,
   z_weight: 1.0,
@@ -42,14 +42,14 @@ geo_localization: {
   asso_preweight: -1, # if w<0 then dynamically adjusted.
 
   # Save data for evaluation
-  out_data: "/home/mice85/aurova-lab/aurova_ws/src/applications/app_old/data/trajectory/C2/method_E/",
-  out_map:  "/home/mice85/aurova-lab/aurova_ws/src/applications/app_old/data/map/",
+  out_data: "/home/aurova/aurova-lab/aurova_ws/src/applications/app_old/data/trajectory/C2/method_E/",
+  out_map:  "/home/aurova/aurova-lab/aurova_ws/src/applications/app_old/data/map/",
   save_map: false,
   save_data: false,
 
   # Ground truth configuration.
   ground_truth: false,
-  out_gt: "/home/mice85/aurova-lab/aurova_ws/src/applications/app_old/data/ground_truth/C4/",
+  out_gt: "/home/aurova/aurova-lab/aurova_ws/src/applications/app_old/data/ground_truth/C4/",
   #gt_last_frame: 3465,
   #gt_key_frames: [340, 600, 930, 1187, 2055, 2280, 2647, 2915, 2077, 3300] # C1
   #gt_last_frame: 4134,
@@ -69,7 +69,7 @@ gps_to_odom: {
 
 #-variables for global_planning node
 global_planning: {
-  url_path: "/home/mice85/aurova-lab/aurova_ws/src/applications/app_old/paths/scientific_park_01.osm",
+  url_path: "/home/aurova/aurova-lab/aurova_ws/src/applications/app_old/paths/scientific_park_02.osm",
   #url_path: "/home/blue-onboard/aurova-lab/aurova_ws/src/applications/paths/parque_01.osm",
   
   url_file_out: "/home/aurova/aurova-lab/aurova_ws/src/application_navigation/output_files/",
@@ -78,7 +78,9 @@ global_planning: {
   #closed_loop: [0, 1, 2, 3, 4, 5, 6, 28, 29, 30, 31, 32, 13, 25, 26, 24, 27, 4, 3, 2, 1],
   #closed_loop: [0, 1, 2, 3, 4, 27, 24, 23, 22, 21, 15, 16, 17, 18, 19, 20],
   #closed_loop: [4, 27, 24, 14, 13, 32, 12, 11, 10, 9, 8, 7, 6, 5],
-  closed_loop: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+  # closed_loop: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21], # scientific_park_01.osm
+  closed_loop: [0, 1, 2, 3, 4, 5, 6, 7, 8, 5, 4, 3, 9], # scientific_park_02.osm
+  # closed_loop: [0, 1, 2, 3, 4, 5, 6, 7, 8, 5, 4, 3, 9], # scientific_park_03.osm
   
   save_data: false,
   frame_id: "map",
