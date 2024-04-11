@@ -1,7 +1,7 @@
 # Grasping Force Estimation in Markerless  Visuo-Tactile Sensors
 
 ## Overview
-This repository presents the code of our last work [], which has been implemented with ROS Noetic in Ubuntu 20.04.
+This repository presents the code of our last work [Grasping Force Estimation in Markerless  Visuo-Tactile Sensors](https://aurova-projects.github.io/force_tactile/), which has been implemented with ROS Noetic in Ubuntu 20.04.
 
 ## Installation instructions
 
