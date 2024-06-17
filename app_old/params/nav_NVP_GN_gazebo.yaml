@@ -28,7 +28,7 @@ global_planning: {
   
   url_file_out: "/home/mice85/aurova-lab/aurova_ws/src/application_navigation/output_files/",
   
-  closed_loop: [1, 2, 3, 4, 5, 6, 16, 15, 12, 11, 10, 9, 8, 7, 6, 16, 15, 12, 13, 14, 0],
+  closed_loop: "1 2 3 4 5 6 16 15 12 11 10 9 8 7 6 16 15 12 13 14 0",
   
   save_data: false,
   frame_id: "map",
