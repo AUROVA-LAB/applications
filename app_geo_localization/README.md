@@ -1,7 +1,7 @@
 # Geo-Localization
 This repository presents the code for replicating the whole pipeline presented in the work: [Geo-Localization Based on Dynamically Weighted Factor-Graph](https://aurova-projects.github.io/geo-localization_weighted/)
 
-![pipeline](/pipeline_weight.png)
+![pipeline](pipeline_weight.png)
 
 ## Installation instructions to replicate
 
