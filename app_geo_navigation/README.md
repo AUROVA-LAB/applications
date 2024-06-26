@@ -1,6 +1,9 @@
 # Geo-Navigation
 This repository presents the code for replicating the whole pipeline presented in the works: [Geo-Localization Based on Dynamically Weighted Factor-Graph](https://aurova-projects.github.io/geo-localization_weighted/) + [OpenStreetMap-Based Autonomous Navigation With LiDAR Naive-Valley-Path Obstacle Avoidance](https://aurova-projects.github.io/osm_path_planning/) 
 
+**Note:** A version of the pipeline, with only localization, is [here](https://github.com/AUROVA-LAB/applications/tree/main/app_geo_localization)
+
+
 ![pipeline](pipeline_navigation.png)
 
 Citations:

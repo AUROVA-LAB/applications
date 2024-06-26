@@ -1,6 +1,7 @@
 # Geo-Localization
 This repository presents the code for replicating the whole pipeline presented in the works: [Geo-Localization Based on Dynamically Weighted Factor-Graph](https://aurova-projects.github.io/geo-localization_weighted/) + [Robust Self-Tuning Data Association for Geo-Referencing Using Lane Markings](https://aurova-projects.github.io/geo-localization_self-tunning/)
 
+
 ![pipeline](pipeline_weight.png)
 
 Citations:
