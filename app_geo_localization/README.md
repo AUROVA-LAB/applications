@@ -3,6 +3,19 @@ This repository presents the code for replicating the whole pipeline presented i
 
 ![pipeline](pipeline_weight.png)
 
+Citation:
+``` 
+@article{munoz2024geoloc,
+  author={Muñoz-Bañón, Miguel Ángel and Olivas, Alejandro and Velasco-Sánchez, Edison and Candelas, Francisco A. and Torres, Fernando},
+  journal={IEEE Robotics and Automation Letters}, 
+  title={Geo-Localization Based on Dynamically Weighted Factor-Graph}, 
+  year={2024},
+  volume={9},
+  number={6},
+  pages={5599-5606},
+  doi={10.1109/LRA.2024.3396055}}
+```
+
 ## Installation instructions to replicate
 
 ### Requirements to use application:
@@ -35,16 +48,3 @@ roslaunch app_geo_localization nav_GeoLoc_online.launch
 ```
 - Follow the instructions [here](https://github.com/AUROVA-LAB/aurova_detections/tree/main/yolinov2_ros) (in the example section) to run the docker for ground boundaries detection (whole localization pipeline).
 - Drive!!
-
-Citation:
-``` 
-@article{munoz2024geoloc,
-  author={Muñoz-Bañón, Miguel Ángel and Olivas, Alejandro and Velasco-Sánchez, Edison and Candelas, Francisco A. and Torres, Fernando},
-  journal={IEEE Robotics and Automation Letters}, 
-  title={Geo-Localization Based on Dynamically Weighted Factor-Graph}, 
-  year={2024},
-  volume={9},
-  number={6},
-  pages={5599-5606},
-  doi={10.1109/LRA.2024.3396055}}
-```
