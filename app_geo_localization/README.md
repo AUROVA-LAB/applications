@@ -23,7 +23,7 @@ This repository presents the code for replicating the whole pipeline presented i
 ```shell
 roslaunch app_geo_localization nav_GeoLoc_offline.launch
 ```
-- Follow the instructions [here](https://github.com/AUROVA-LAB/aurova_detections/tree/main/yolinov2_ros) to run the docker for ground boundaries detection (whole localization pipeline):
+- Follow the instructions [here](https://github.com/AUROVA-LAB/aurova_detections/tree/main/yolinov2_ros) (in the example section) to run the docker for ground boundaries detection (whole localization pipeline).
 
 ### Steps to use application: (online mode via BLUE robot)
 
@@ -33,6 +33,7 @@ roslaunch app_geo_localization nav_GeoLoc_offline.launch
 ```shell
 roslaunch app_geo_localization nav_GeoLoc_online.launch
 ```
+- Follow the instructions [here](https://github.com/AUROVA-LAB/aurova_detections/tree/main/yolinov2_ros) (in the example section) to run the docker for ground boundaries detection (whole localization pipeline).
 - Drive!!
 
 Citation:
