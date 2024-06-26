@@ -1,19 +1,33 @@
 # Geo-Localization
-This repository presents the code for replicating the whole pipeline presented in the work: [Geo-Localization Based on Dynamically Weighted Factor-Graph](https://aurova-projects.github.io/geo-localization_weighted/)
+This repository presents the code for replicating the whole pipeline presented in the works: [Geo-Localization Based on Dynamically Weighted Factor-Graph](https://aurova-projects.github.io/geo-localization_weighted/) + [Robust Self-Tuning Data Association for Geo-Referencing Using Lane Markings](https://aurova-projects.github.io/geo-localization_self-tunning/)
 
 ![pipeline](pipeline_weight.png)
 
-Citation:
+Citations:
 ``` 
-@article{munoz2024geoloc,
-  author={Muñoz-Bañón, Miguel Ángel and Olivas, Alejandro and Velasco-Sánchez, Edison and Candelas, Francisco A. and Torres, Fernando},
-  journal={IEEE Robotics and Automation Letters}, 
-  title={Geo-Localization Based on Dynamically Weighted Factor-Graph}, 
-  year={2024},
-  volume={9},
-  number={6},
-  pages={5599-5606},
-  doi={10.1109/LRA.2024.3396055}}
+@article{munoz2024geolocalization,
+          title={Geo-Localization Based on Dynamically Weighted Factor-Graph},
+          author={Muñoz-Bañón, Miguel Ángel and Olivas, Alejandro and Velasco-Sánchez, Edison and Candelas, Francisco A. and Torres, Fernando},
+          journal={IEEE Robotics and Automation Letters},
+          volume={9},
+          number={6},
+          pages={5599--5606},
+          year={2024},
+          doi={10.1109/LRA.2024.3396055},
+          publisher={IEEE}
+        }
+
+@article{munoz2022robust,
+          title={Robust Self-Tuning Data Association for Geo-Referencing Using Lane Markings},
+          author={Muñoz-Bañón, Miguel Ángel and Pauls, Jan-Hendrik and Hu, Haohao and Stiller, Christoph and Candelas, Francisco A. and Torres, Fernando},
+          journal={IEEE Robotics and Automation Letters},
+          volume={7},
+          number={4},
+          pages={12339--12346},
+          year={2022},
+          doi={10.1109/LRA.2022.3216991},
+          publisher={IEEE}
+        }
 ```
 
 ## Installation instructions to replicate
@@ -38,7 +52,7 @@ roslaunch app_geo_localization nav_GeoLoc_offline.launch
 ```
 - Follow the instructions [here](https://github.com/AUROVA-LAB/aurova_detections/tree/main/yolinov2_ros) (in the example section) to run the docker for ground boundaries detection (whole localization pipeline).
 
-### Steps to use application: (online mode via BLUE robot)
+### Steps to use application (online mode via BLUE robot):
 
 - Modify "params/nav_GeoLoc_online.yaml" to provide correct link in "url_to_map" variable.
 - Run next command for localization:
@@ -48,3 +62,5 @@ roslaunch app_geo_localization nav_GeoLoc_online.launch
 ```
 - Follow the instructions [here](https://github.com/AUROVA-LAB/aurova_detections/tree/main/yolinov2_ros) (in the example section) to run the docker for ground boundaries detection (whole localization pipeline).
 - Drive!!
+
+**Note:** A version of the pipeline, including path planning, is [here](https://github.com/AUROVA-LAB/applications/tree/main/app_geo_navigation)
