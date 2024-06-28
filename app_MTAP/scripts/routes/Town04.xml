@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map>
+    <node id="0" pose_x="259" pose_y="-248" yaw="0.0"/>
+    <node id="1" pose_x="313" pose_y="-248" />
+    <node id="2" pose_x="313" pose_y="-276" />
+    <node id="3" pose_x="310" pose_y="-287" />
+    <node id="4" pose_x="303" pose_y="-298" />
+    <node id="5" pose_x="292" pose_y="-307" />
+    <node id="6" pose_x="282" pose_y="-309" />
+    <node id="7" pose_x="257" pose_y="-309" />
+    <node id="8" pose_x="202" pose_y="-248" yaw="0.0"/>
+    <node id="9" pose_x="257" pose_y="-171" yaw="180"/>
+    <node id="10" pose_x="200" pose_y="-171" />
+    <node id="11" pose_x="202" pose_y="-309"/>
+
+
+    <way id="1">
+        <nd ref="0"/>
+        <nd ref="1"/>
+        <nd ref="2"/>
+        <nd ref="3"/>
+        <nd ref="4"/>
+        <nd ref="5"/>
+        <nd ref="6"/>
+        <nd ref="7"/>
+        <nd ref="0"/>
+        <nd ref="9"/>
+        <nd ref="10"/>
+        <nd ref="8"/>
+        <nd ref="0"/>
+    </way>
+
+    <way id="-1">
+        <nd ref="0"/>
+        <nd ref="8"/>
+        <nd ref="10"/>
+        <nd ref="9"/>
+        <nd ref="0"/>
+        <nd ref="7"/>
+        <nd ref="6"/>
+        <nd ref="5"/>
+        <nd ref="4"/>
+        <nd ref="3"/>
+        <nd ref="2"/>
+        <nd ref="1"/>
+        <nd ref="0"/>
+    </way>
+
+    <!-- Evaluation -->
+    <way id="2" weather="6">
+        <nd ref="8"/>
+        <nd ref="11"/>
+        <nd ref="7"/>
+    </way>
+
+    <way id="3" weather="2">
+        <nd ref="1"/>
+        <nd ref="2"/>
+        <nd ref="3"/>
+        <nd ref="4"/>
+        <nd ref="5"/>
+        <nd ref="6"/>
+        <nd ref="7"/>
+    </way>
+
+    <way id="4" weather="0">
+        <nd ref="7"/>
+        <nd ref="0"/>
+        <nd ref="7"/>
+    </way>
+
+    <way id="5" weather="1">
+        <nd ref="10"/>
+        <nd ref="9"/>
+        <nd ref="0"/>
+    </way>
+
+</map>

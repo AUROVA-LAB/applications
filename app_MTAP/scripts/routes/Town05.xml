@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map>
+    <node id="0" pose_x="32" pose_y="-90" />
+    <node id="1" pose_x="42" pose_y="-79" />
+    <node id="2" pose_x="54" pose_y="-79" />
+    <node id="3" pose_x="56" pose_y="-64" />
+    <node id="4" pose_x="56" pose_y="-9" /> 
+    <node id="5" pose_x="41" pose_y="-9" />
+    <node id="6" pose_x="29" pose_y="0" /> 
+    <node id="7" pose_x="153" pose_y="0" />
+    <node id="8" pose_x="153" pose_y="-96" yaw="270.0"/>
+    <node id="9" pose_x="148" pose_y="-118" />
+    <node id="10" pose_x="137" pose_y="-129" />
+    <node id="11" pose_x="114" pose_y="-141" />
+    <node id="12" pose_x="33" pose_y="-148" />
+
+    <way id="1">
+        <nd ref="0"/>
+        <nd ref="1"/>
+        <nd ref="2"/>
+        <nd ref="3"/>
+        <nd ref="4"/>
+        <nd ref="5"/>
+        <nd ref="6"/>
+        <nd ref="7"/>
+        <nd ref="8"/>
+        <nd ref="9"/>
+        <nd ref="10"/>
+        <nd ref="11"/>
+        <nd ref="12"/>
+        <nd ref="0"/>
+    </way>
+
+    <way id="-1">
+        <nd ref="0"/>
+        <nd ref="12"/>
+        <nd ref="11"/>
+        <nd ref="10"/>
+        <nd ref="9"/>
+        <nd ref="8"/>
+        <nd ref="7"/>
+        <nd ref="6"/>
+        <nd ref="5"/>
+        <nd ref="4"/>
+        <nd ref="3"/>
+        <nd ref="2"/>
+        <nd ref="1"/>
+        <nd ref="0"/>
+    </way>
+
+    <!-- Evaluation -->
+    <way id="2" weather="6">
+        <nd ref="0"/>
+        <nd ref="6"/>
+    </way>
+
+    <way id="3" weather="1">
+        <nd ref="6"/>
+        <nd ref="7"/>
+    </way>
+
+    <way id="4" weather="1">
+        <nd ref="8"/>
+        <nd ref="7"/>
+    </way>
+
+    <way id="5" weather="6">
+        <nd ref="8"/>
+        <nd ref="9"/>
+        <nd ref="10"/>
+        <nd ref="11"/>
+    </way>
+
+    <way id="6" weather="6">
+        <nd ref="12"/>
+        <nd ref="11"/>
+    </way>
+
+    <way id="7" weather="2">
+        <nd ref="0"/>
+        <nd ref="12"/>
+        <nd ref="0"/>
+    </way>
+
+    <way id="8" weather="2">
+        <nd ref="0"/>
+        <nd ref="1"/>
+        <nd ref="2"/>
+        <nd ref="3"/>
+        <nd ref="4"/>
+        <nd ref="5"/>
+    </way>
+
+</map>

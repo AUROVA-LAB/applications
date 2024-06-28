@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The routes should be circula, i.e. after the last node the pedestrian should go to the first. -->
+<root>
+    <random seed="99"/>
+    <pedestrians>
+
+        <pedestrian>
+            <node id="0" pose_x="140" pose_y="-6" pose_z="1"/>
+            <node id="1" pose_x="140" pose_y="6" pose_z="1"/>
+            
+
+            <way id="0">
+                <nd ref="1"/>
+                <nd ref="0"/> 
+            </way>
+        </pedestrian>
+
+        <pedestrian>
+            <node id="0" pose_x="135" pose_y="-6" pose_z="1"/>
+            <node id="1" pose_x="135" pose_y="6" pose_z="1"/>
+            
+
+            <way id="0">
+                <nd ref="1"/>
+                <nd ref="0"/> 
+            </way>
+        </pedestrian>
+
+        <pedestrian>
+            <node id="0" pose_x="128" pose_y="-6" pose_z="1"/>
+            <node id="1" pose_x="128" pose_y="6" pose_z="1"/>
+            
+
+            <way id="0">
+                <nd ref="0"/>
+                <nd ref="1"/> 
+            </way>
+        </pedestrian>
+
+        <pedestrian>
+            <node id="0" pose_x="118" pose_y="-6" pose_z="1"/>
+            <node id="1" pose_x="118" pose_y="6" pose_z="1"/>
+            
+
+            <way id="0">
+                <nd ref="0"/>
+                <nd ref="1"/> 
+            </way>
+        </pedestrian>
+
+        <pedestrian>
+            <node id="0" pose_x="105" pose_y="-6" pose_z="1"/>
+            <node id="1" pose_x="105" pose_y="6" pose_z="1"/>
+            
+
+            <way id="0">
+                <nd ref="0"/>
+                <nd ref="1"/> 
+            </way>
+        </pedestrian>
+
+        <pedestrian>
+            <node id="0" pose_x="111" pose_y="-6" pose_z="1"/>
+            <node id="1" pose_x="111" pose_y="6" pose_z="1"/>
+            
+
+            <way id="0">
+                <nd ref="1"/>
+                <nd ref="0"/> 
+            </way>
+        </pedestrian>
+
+
+        <apparition>
+            <node id="0" pose_x="100" pose_y="0" pose_z="1"/>
+        </apparition>
+
+         <apparition>
+            <node id="0" pose_x="123" pose_y="0" pose_z="1"/>
+        </apparition>
+
+         <apparition>
+            <node id="0" pose_x="143" pose_y="0" pose_z="1"/>
+        </apparition>
+
+    </pedestrians>
+</root>

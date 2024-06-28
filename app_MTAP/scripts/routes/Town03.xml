@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map>
+    <node id="0" pose_x="136" pose_y="57" yaw="180"/>
+    <node id="1" pose_x="103" pose_y="57"/>
+    <node id="2" pose_x="76" pose_y="46"/>
+    <node id="3" pose_x="62" pose_y="59" />
+    <node id="4" pose_x="74" pose_y="74" />
+    <node id="5" pose_x="102" pose_y="64" />
+    <node id="6" pose_x="136" pose_y="64" yaw="180"/>
+
+    <!-- Training and evaluation -->
+    <way id="1">
+        <nd ref="0"/>
+        <nd ref="1"/>
+        <nd ref="2"/>
+        <nd ref="3"/>
+        <nd ref="4"/>
+        <nd ref="5"/>
+        <nd ref="6"/>
+    </way>
+
+    <way id="-1" weather="6">
+        <nd ref="6"/>
+        <nd ref="5"/>
+        <nd ref="4"/>
+        <nd ref="3"/>
+        <nd ref="2"/>
+        <nd ref="1"/>
+        <nd ref="0"/>
+    </way>
+
+</map>

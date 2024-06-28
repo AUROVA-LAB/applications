@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- The routes should be circula, i.e. after the last node the pedestrian should go to the first. -->
+<root>
+    <random seed="27"/>
+    <pedestrians>
+
+        <pedestrian>
+            <node id="0" pose_x="97" pose_y="48" pose_z="1"/>
+            <node id="1" pose_x="87" pose_y="55" pose_z="1"/>
+
+            <way id="0">
+                <nd ref="0"/>
+                <nd ref="1"/>
+            </way>
+        </pedestrian>    
+
+        <pedestrian>
+            <node id="0" pose_x="80" pose_y="41" pose_z="1"/>
+            <node id="1" pose_x="82" pose_y="50" pose_z="1"/>
+
+            <way id="0">
+                <nd ref="1"/>
+                <nd ref="0"/>
+            </way>
+        </pedestrian>    
+
+        <pedestrian>
+            <node id="0" pose_x="69" pose_y="40" pose_z="1"/>
+            <node id="1" pose_x="70" pose_y="51" pose_z="1"/>
+
+            <way id="0">
+                <nd ref="0"/>
+                <nd ref="1"/>
+            </way>
+        </pedestrian>    
+
+        <pedestrian>
+            <node id="0" pose_x="63" pose_y="45" pose_z="1"/>
+            <node id="1" pose_x="63" pose_y="76" pose_z="1"/>
+
+            <way id="0">
+                <nd ref="0"/>
+                <nd ref="1"/>
+            </way>
+        </pedestrian>    
+
+        <pedestrian>
+            <node id="0" pose_x="54" pose_y="60" pose_z="1"/>
+            <node id="1" pose_x="66" pose_y="60" pose_z="1"/>
+
+            <way id="0">
+                <nd ref="0"/>
+                <nd ref="1"/>
+            </way>
+        </pedestrian>    
+
+        <pedestrian>
+            <node id="0" pose_x="95" pose_y="73" pose_z="1"/>
+            <node id="1" pose_x="89" pose_y="65" pose_z="1"/>
+
+            <way id="0">
+                <nd ref="1"/>
+                <nd ref="0"/>
+            </way>
+        </pedestrian>  
+
+        <pedestrian>
+            <node id="0" pose_x="106" pose_y="60" pose_z="1"/>
+            <node id="1" pose_x="133" pose_y="60" pose_z="1"/>
+
+            <way id="0">
+                <nd ref="0"/>
+                <nd ref="1"/>
+            </way>
+        </pedestrian>
+
+        <pedestrian>
+            <node id="0" pose_x="126" pose_y="70" pose_z="1"/>
+            <node id="1" pose_x="126" pose_y="53" pose_z="1"/>
+
+            <way id="0">
+                <nd ref="0"/>
+                <nd ref="1"/>
+            </way>
+        </pedestrian>    
+
+        <pedestrian>
+            <node id="0" pose_x="116" pose_y="70" pose_z="1"/>
+            <node id="1" pose_x="116" pose_y="53" pose_z="1"/>
+
+            <way id="0">
+                <nd ref="1"/>
+                <nd ref="0"/>
+            </way>
+        </pedestrian>    
+
+
+        <apparition>
+            <node id="0" pose_x="72" pose_y="74" pose_z="1"/>
+        </apparition>
+
+        <apparition>
+            <node id="0" pose_x="82" pose_y="73" pose_z="1"/>
+        </apparition>
+
+        <apparition>
+            <node id="0" pose_x="100" pose_y="60" pose_z="1"/>
+        </apparition>
+
+
+    </pedestrians>
+</root>

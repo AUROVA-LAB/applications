@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map>
+    <node id="0" pose_x="90" pose_y="2.2" yaw="90.0"/>
+    <node id="1" pose_x="90" pose_y="56.5" yaw="0.0"/>
+    <node id="2" pose_x="153" pose_y="57" yaw="180.0"/> 
+    <node id="3" pose_x="153" pose_y="2.2" yaw="90.0"/>
+    <node id="4" pose_x="0" pose_y="100" yaw="270.0"/>
+    <node id="5" pose_x="2" pose_y="2" yaw="0.0"/>
+    <node id="6" pose_x="90" pose_y="132" yaw="0.0"/>
+    <node id="7" pose_x="120" pose_y="132" yaw="0.0"/>
+
+<!-- Experiments -->
+    <way id="1">
+        <nd ref="0"/>
+        <nd ref="1"/>
+        <nd ref="2"/>
+        <nd ref="3"/>
+        <nd ref="0"/>
+    </way>
+
+    <way id="-1">
+        <nd ref="0"/>
+        <nd ref="3"/>
+        <nd ref="2"/>
+        <nd ref="1"/>
+        <nd ref="0"/>
+    </way>
+
+    <way id="2">
+        <nd ref="0"/>
+        <nd ref="1"/>
+        <nd ref="0"/>
+        <nd ref="3"/>
+        <nd ref="0"/>
+    </way>
+
+    <way id="-2">
+        <nd ref="0"/>
+        <nd ref="3"/>
+        <nd ref="0"/>
+        <nd ref="1"/>
+        <nd ref="0"/>
+    </way>
+
+    <way id="3">
+        <nd ref="1"/>
+        <nd ref="2"/>
+        <nd ref="3"/>
+        <nd ref="0"/>
+    </way>
+
+    <way id="-3">
+        <nd ref="0"/>
+        <nd ref="3"/>
+        <nd ref="2"/>
+        <nd ref="1"/>
+    </way>
+
+    <way id="4">
+        <nd ref="2"/>
+        <nd ref="1"/>
+        <nd ref="2"/>
+        <nd ref="3"/>
+        <nd ref="2"/>
+    </way>
+
+    <way id="-4">
+        <nd ref="2"/>
+        <nd ref="3"/>
+        <nd ref="2"/>
+        <nd ref="1"/>
+        <nd ref="2"/>
+    </way>
+
+<!-- Evaluation 1-->
+    <way id="5" weather="6">
+        <nd ref="3"/>
+        <nd ref="2"/>
+        <nd ref="3"/>
+    </way>
+
+    <way id="6" weather="6"> 
+        <nd ref="3"/>
+        <nd ref="0"/>
+        <nd ref="1"/>
+    </way>
+
+    <way id="7" weather="2">
+        <nd ref="1"/>
+        <nd ref="2"/>
+        <nd ref="1"/>
+    </way>
+
+<!-- Evaluation 2-->
+    <way id="8" weather="2"> 
+        <nd ref="1"/>
+        <nd ref="0"/>
+        <nd ref="3"/>
+    </way>
+
+<!-- Evaluation 3-->
+    <way id="9" weather="0"> 
+        <nd ref="0"/>
+        <nd ref="3"/>
+        <nd ref="0"/>
+    </way>
+
+<!-- Evaluation 4-->
+    <way id="10" weather="6"> 
+        <nd ref="0"/>
+        <nd ref="5"/>
+    </way>
+
+    <way id="11" weather="1"> 
+        <nd ref="5"/>
+        <nd ref="4"/>
+    </way>
+
+    <way id="12" weather="1"> 
+        <nd ref="4"/>
+        <nd ref="5"/>
+    </way>
+
+    <way id="13" weather="2"> 
+        <nd ref="5"/>
+        <nd ref="0"/>
+    </way>
+
+<!-- Evaluation 5-->
+    <way id="14" weather="4"> 
+        <nd ref="1"/>
+        <nd ref="6"/>
+        <nd ref="7"/>
+    </way>
+</map>
