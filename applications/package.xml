@@ -33,6 +33,7 @@
   <exec_depend>app_old</exec_depend>
   <exec_depend>app_tracker_fusion</exec_depend>
   <exec_depend>app_MTAP</exec_depend>
+  <exec_depend>app_geo_localization</exec_depend>
     
   <buildtool_depend>catkin</buildtool_depend>
 
