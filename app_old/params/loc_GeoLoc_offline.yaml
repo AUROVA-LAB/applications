@@ -66,3 +66,12 @@ gps_to_odom: {
   min_speed: 0.4,
   max_speed: 1.3
 }
+
+image2pcl: {
+  range_img: "/ouster/range_image",
+  mask_img: "/ground_lines_img",
+  out_pc: "/ouster/points",
+  out_detections: "/ground_lines_pc",
+  include_detections: true,
+  include_pc: true
+}

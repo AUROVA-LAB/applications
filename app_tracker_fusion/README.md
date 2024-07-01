@@ -38,7 +38,7 @@ This repository contains the code for the ICINCO 2023 paper [Robust Single Objec
     - Follow the instructions to install the [lib_planning](https://github.com/AUROVA-LAB/lib_planning) library.
 
 4. **Build Docker Images**:
-    - Follow the instuctions of [yolo_ros_ouster](https://github.com/AUROVA-LAB/aurova_detections/yolo_ros_ouster) to build the Docker image with the images trackers.
+    - Follow the instuctions of [image_trackers_ouster](https://github.com/AUROVA-LAB/aurova_detections/image_trackers_ouster) to build the Docker image with the images trackers.
     - Optionally, follow the instructions of [m2track_ros](https://github.com/AUROVA-LAB/aurova_detections/m2track_ros) to build the Docker image with the point cloud tracker (consider that better results are reported without using it).
 
 5. **Requirements for BLUE robot (Optional)**. 
@@ -46,6 +46,7 @@ This repository contains the code for the ICINCO 2023 paper [Robust Single Objec
 
 6. **Install ROS packages**:
     ```
+    cd tracker_fusion_ws
     catkin_make
     ```
 

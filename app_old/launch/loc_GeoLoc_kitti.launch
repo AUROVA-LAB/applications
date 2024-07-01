@@ -15,7 +15,7 @@
 
   <!-- Nodes to ground lines detection -->
   <node pkg="merged_channels_ouster" name="merge_channels" type="merge_channels_ouster.py"></node>
-  <include file="$(find image2pcl)/launch/image2pcl_kitti.launch" />
+  <node pkg="image2pcl"   type="image2pcl_node" name="image2pcl" output="screen"/>
 
   <node pkg="rosbag" type="play" name="rosbagplay" args="$(arg bag_file_1) --clock -d 5 -r 0.25 -s 0" required="true" />
   <node type="rviz" name="rviz" pkg="rviz" args="-d $(find app_old)/rviz/nav_geoloc-kitti.rviz" />

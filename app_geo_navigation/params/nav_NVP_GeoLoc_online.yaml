@@ -136,3 +136,12 @@ ackermann_control: {
   carrot_ctrl: false,
   carrot_distance: 4.0
 }
+
+image2pcl: {
+  range_img: "/ouster/range_image",
+  mask_img: "/ground_lines_img",
+  out_pc: "/ouster/points",
+  out_detections: "/ground_lines_pc",
+  include_detections: true,
+  include_pc: true
+}

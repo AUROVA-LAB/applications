@@ -27,7 +27,7 @@
 
   <!-- Nodes to ground lines detection -->
   <node pkg="merged_channels_ouster" name="merge_channels" type="merge_channels_ouster.py"></node>
-  <include file="$(find image2pcl)/launch/image2pcl.launch" />
+  <node pkg="image2pcl"   type="image2pcl_node" name="image2pcl" output="screen"/>
 
   <!-- LPP, GPP, and utm -> map transformation -->
   <node name="global_planning" pkg="global_planning" type="global_planning" output="screen" >

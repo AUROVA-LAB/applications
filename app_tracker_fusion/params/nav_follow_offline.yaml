@@ -53,6 +53,13 @@ tracker_filter: {
   metrics: false,
   mute_image_trackers: false,
   label_file: "/media/alolivas/MSI_500/follow_experiments/label_follow4.txt",
-  output_file: "/media/alolivas/MSI_500/follow_experiments/metrics_follow4.txt"
+  output_file: "/media/alolivas/MSI_500/follow_experiments/metrics_follow4.txt",
+  rate: 10,
+  bounding_box_percet_reduction: 0.6,
+  max_traslation_distance: 1.0,
+  filter_radious: 0.8,
+  search_time: 5.0,
+  x_model: 1.0,
+  y_model: 1.0
 }
 
