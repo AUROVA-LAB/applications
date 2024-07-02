@@ -24,7 +24,7 @@ geo_localization: {
   radious_dt: 15.0,
   radious_lm: 22.5,
   url_to_map: "/home/aurova/aurova-lab/aurova_ws/src/applications/app_geo_localization/maps/scientific_park_01.osm",
-  # url_to_map: "/home/blue-onboard/aurova_lab/aurova_ws/src/applications/app_geo_localization/maps/scientific_park_01.osm",
+  # url_to_map: "/home/blue-onboard/aurova-lab/aurova_ws/src/applications/app_geo_localization/maps/scientific_park_01.osm",
   acum_tf_da: 10,
   acum_tf_varfactor: 2.0,
   z_weight: 1.0,
