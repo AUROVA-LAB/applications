@@ -71,5 +71,5 @@ image2pcl: {
   out_pc: "/ouster/points",
   out_detections: "/ground_lines_pc",
   include_detections: true,
-  include_pc: true
+  include_pc: false
 }

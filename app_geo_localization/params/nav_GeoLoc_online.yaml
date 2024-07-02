@@ -21,8 +21,8 @@ geo_localization: {
   voxel_asso: 1.5,
   radious_dt: 15.0,
   radious_lm: 22.5,
-  url_to_map: "/home/aurova/aurova-lab/aurova_ws/src/applications/app_old/maps/scientific_park_01.osm",
-  # url_to_map: "/home/blue-onboard/aurova-lab/aurova_ws/src/applications/app_old/maps/scientific_park_01.osm",
+  # url_to_map: "/home/aurova/aurova-lab/aurova_ws/src/applications/app_old/maps/scientific_park_01.osm",
+  url_to_map: "/home/blue-onboard/aurova-lab/aurova_ws/src/applications/app_old/maps/scientific_park_01.osm",
   acum_tf_da: 10,
   acum_tf_varfactor: 2.0,
   z_weight: 1.0,
@@ -72,5 +72,5 @@ image2pcl: {
   out_pc: "/ouster/points",
   out_detections: "/ground_lines_pc",
   include_detections: true,
-  include_pc: true
+  include_pc: false
 }
