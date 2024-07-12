@@ -1,9 +1,9 @@
 #-variables for global_planning node
 global_planning: {
-  url_path: "$(optenv OSM_ROS /home/alolivas/aurova-lab/aurova_ws/src/applications/app_MTAP/paths/Town03.osm)",
+  url_path: "$(optenv OSM_ROS /home/alolivas/aurova-lab/aurova_ws/src/applications/app_MTAP/paths/Town01.osm)",
   url_file_out: "/home/mice85/aurova-lab/aurova_ws/src/application_navigation/output_files/",
 
-  closed_loop: "$(optenv CLOSE_LOOP_ROS 5 4 3 2 1 0)",
+  closed_loop: "$(optenv CLOSE_LOOP_ROS 0 1 2 3)",
   
   save_data: false,
   frame_id: "map",
@@ -19,8 +19,8 @@ global_planning: {
 
 geo_localization: {
 
-  lat_zero: !!float "$(optenv LAT_ZERO 38.3811)",
-  lon_zero: !!float "$(optenv LON_ZERO 0.001)",
+  lat_zero: !!float "$(optenv LAT_ZERO 38.38164422311365)",
+  lon_zero: !!float "$(optenv LON_ZERO -0.5255029920793286)",
   # Geo-localization local parameters (the reference is for starting forward, until the robot localizes itself)
   # Town01
   # lat_zero: 38.38164422311365,
@@ -55,7 +55,7 @@ geo_localization: {
   voxel_asso: 1.5,
   radious_dt: 15.0,
   radious_lm: 22.5,
-  url_to_map: "/home/alolivas/aurova-lab/aurova_ws/src/applications/app_MTAP/paths/Town05.osm",
+  url_to_map: "/home/alolivas/aurova-lab/aurova_ws/src/applications/app_MTAP/paths/Town01.osm",
   acum_tf_da: 10,
   acum_tf_varfactor: 2.0,
   z_weight: 1.0,
@@ -104,7 +104,12 @@ local_planning: {
   frame_lidar: "base_link/lidar",
   save_data: false,
   url_file_out: "/home/mice85/aurova-lab/aurova_ws/src/application_navigation/output_files/scans/",
-  external_obstacle_detection: true
+  external_obstacle_detection: true,
+  wa: 100.0,
+  wr: 1.0,
+  aa: 0.3,
+  ar: 1.2,
+  wa2: 3.0
 }
 lidar_configuration: {
   max_elevation_angle: 112.5,

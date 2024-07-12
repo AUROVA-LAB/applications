@@ -4,8 +4,8 @@
   <rosparam command="load" file="$(find app_MTAP)/params/nav_carla.yaml" subst_value="true"/>
 
   <!-- For spawning the vehicle in carla, do not use the OpenStreetMap, use the one with the locations in XYZ -->
-  <arg name="map" default="$(optenv CARLA_MAP /media/alolivas/MSI_500/aurova_carla/carla/PythonAPI/aurova/routes/Town03.xml)"/>
-  <arg name="way" default="$(optenv CARLA_WAY -1)" />
+  <arg name="map" default="$(optenv CARLA_MAP /media/alolivas/MSI_500/aurova_carla/carla/PythonAPI/aurova/routes/Town01.xml)"/>
+  <arg name="way" default="$(optenv CARLA_WAY 1)" />
   <!--  -->
 
   <node name="global_planning" pkg="global_planning" type="global_planning" output="screen">

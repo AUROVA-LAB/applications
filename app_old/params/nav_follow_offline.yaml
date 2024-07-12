@@ -10,7 +10,12 @@ local_planning: {
   frame_lidar: "os_sensor",
   save_data: false,
   url_file_out: "/home/alolivas/aurova-lab/aurova_ws/src/application_navigation/output_files/scans/",
-  external_obstacle_detection: true
+  external_obstacle_detection: true,
+  wa: 100.0,
+  wr: 1.0,
+  aa: 0.3,
+  ar: 1.2,
+  wa2: 3.0
 }
 lidar_configuration: {
   max_elevation_angle: 112.5,

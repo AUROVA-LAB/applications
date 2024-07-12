@@ -31,6 +31,8 @@
   <node id='-225278' action='modify' visible='true' lat='38.38169005676' lon='-0.52476212449' />
   <node id='-225279' action='modify' visible='true' lat='38.38164117218' lon='-0.52496127851' />
   <node id='-225280' action='modify' visible='true' lat='38.38160910808' lon='-0.52509136565' />
+  <node id='-225297' action='modify' visible='true' lat='38.38229822025' lon='-0.52406475015' />
+  <node id='-225298' action='modify' visible='true' lat='38.38238258479' lon='-0.52409945123' />
   <way id='-104752' action='modify' visible='true'>
     <nd ref='-225250' />
     <nd ref='-225251' />
@@ -64,5 +66,10 @@
     <nd ref='-225279' />
     <nd ref='-225280' />
     <nd ref='-225250' />
+  </way>
+  <way id='-104769' action='modify' visible='true'>
+    <nd ref='-225267' />
+    <nd ref='-225297' />
+    <nd ref='-225298' />
   </way>
 </osm>
