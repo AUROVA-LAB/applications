@@ -14,7 +14,7 @@ local_planning: {
   wa: 100.0,
   wr: 1.0,
   aa: 0.3,
-  ar: 1.2,
+  ar: 0.8,
   wa2: 3.0
 }
 lidar_configuration: {
