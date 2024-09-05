@@ -49,11 +49,7 @@ This repository presents the code of our last work [Grasping Force Estimation in
 	cd digit_ros/src/scripts/
 	python estimate_force.py
 	```
-3. **Possible error due to cv_bridge**:
-	- In case you get the following error with cv_bridge:
-	`"ImportError: /lib/libgdal.so.26: undefined symbol: TIFFReadRGBATileExt, version LIBTIFF_4.0"`
-	- I managed to solve with:
-	`export LD_PRELOAD=/usr/bin/x86_64-linux-gnu/libtiff.so.5`
+
 
 ## Citation
 If you find our code or papers useful, please cite:
