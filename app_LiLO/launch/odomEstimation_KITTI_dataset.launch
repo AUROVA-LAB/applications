@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<launch>
+
+    <param name="scan_period" value="0.1" />      
+    <param name="max_dis" type="double" value="50" />
+    <param name="min_dis" type="double" value="0" /> 
+    <param name="scan_line" type="int" value="32" /> 
+    <param name="edge_resolution" type="double" value="0.5" />
+    <param name="surf_resolution" type="double" value="1.0" />
+    <param name="velodyne_height" type="double" value="-20" />
+    <param name="validation_height" type="bool" value="false" />
+    <param name="clear_map" type="bool" value="false" />
+    <param name="edge_limit" type="double" value="15000" />
+    <param name="surf_limit" type="double" value="15000" />
+    <param name="/pcl_edge" type="str" value="/pcl_edge" />
+    <param name="/pcl_surf" type="str" value="/pcl_surf" />
+    <param name="/childframeID" type="str" value="velodyne" /> 
+    <param name="cropBox_len" type="double" value="50" />     
+
+    <node pkg="odom_estimation_pc" type="odom_estimation_node" name="odom_estimation_node" output="screen"/>
+   
+    
+    <arg name="rviz" default="false" />
+    <group if="$(arg rviz)">
+        <node launch-prefix="nice" pkg="rviz" type="rviz" name="rviz" args="-d $(find odom_estimation_pc)/rviz/odomEstimation.rviz" />
+    </group>
+    
+
+    <node pkg="hector_trajectory_server" type="hector_trajectory_server" name="trajectory_lilo" ns="base_link" >
+        <param name="/target_frame_name" value="odom" />
+        <param name="/source_frame_name" value="base_link" />
+        <param name="/trajectory_update_rate" value="10.0" />
+        <param name="/trajectory_publish_rate" value="10.0" />
+
+  </node> 
+
+</launch>
+
+
