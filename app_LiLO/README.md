@@ -4,9 +4,10 @@ This repository presents the code for replicating the whole pipeline presented i
 
 **Note:** This node uses the dependencies of the [aurova_odom](https://github.com/AUROVA-LAB/aurova_odom/tree/main) and [aurova-preprocessed](https://github.com/AUROVA-LAB/aurova_preprocessed) metapackages.
 
-<!---
+
 ![pipeline](LiLO_pipeline.png)
 
+<!---
 Citations [[Preprint](https://arxiv.org/abs/2311.07291)]:
 ``` 
 @article{velasco2023lilo,
