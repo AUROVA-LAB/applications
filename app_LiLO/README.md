@@ -21,7 +21,12 @@ Citations [[Preprint](https://arxiv.org/abs/2311.07291)]:
 
 ### Feature extraction process
 This process is carried out using our feature extraction package, which is available in [aurova-preprocessed](https://github.com/AUROVA-LAB/aurova_preprocessed) and is called [pc_features](https://github.com/AUROVA-LAB/aurova_preprocessed/tree/master/pc_features).
-![pipeline](feature_extraction_LiLO.gif)
+![visual_process](feature_extraction_LiLO.gif)
+
+### Feature extraction comparation 
+The figure shows the feature extraction of the KITTI dataset in sequence 08, using the proposed method and comparing it with the classical feature extraction method tested in LOAM-based methods.
+
+![comparation](feature_extraction_comparation.png)
 
 
 ## Installation instructions to use
