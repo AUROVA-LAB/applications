@@ -81,7 +81,7 @@ Applications:
           publisher={IEEE}
         }
 ```
-To cite our application (LiLo paper):
+To cite our application ([LiLo paper](https://www.tandfonline.com/doi/full/10.1080/01691864.2025.2571569)):
 
 ```
 @article{velasco2025lilo,
