@@ -81,3 +81,15 @@ Applications:
           publisher={IEEE}
         }
 ```
+To cite our application (LiLo paper):
+
+```
+@article{velasco2025lilo,
+  title={LiLO: Lightweight and low-bias LiDAR odometry method based on spherical range image filtering},
+  author={Velasco-S{\'a}nchez, Edison P and Mu{\~n}oz-Ba{\~n}{\'o}n, Miguel {\'A}ngel and Candelas, Francisco A and Puente, Santiago T and Torres, Fernando},
+  journal={Advanced Robotics},
+  pages={1--17},
+  year={2025},
+  publisher={Taylor \& Francis}
+}
+```
