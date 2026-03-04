@@ -1,10 +1,11 @@
-# Overview
 
-This repository contains resources and instructions for setting up the framework presented in [Sim-to-Real Transfer by Hybrid 3D Gaussian Splatting and LiDAR Reconstruction for Autonomous Driving](https://aurova-projects.github.io/Sim2Real/).
+<div align="center" style="list-style: none;">
 
-## Video
+ # Sim-to-Real Transfer by Hybrid 3D Gaussian Splatting and LiDAR Reconstruction for Autonomous Driving <br>[Paper]() | [Project](https://aurova-projects.github.io/Sim2Real/)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QmRLwfY-0To?si=J6UgT5NGmGmXUAz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+[![Sim-to-Real Overview](media/Graphic_abstract.png)](https://www.youtube.com/embed/QmRLwfY-0To?si=J6UgT5NGmGmXUAz0)
 
 
 ## Installation
