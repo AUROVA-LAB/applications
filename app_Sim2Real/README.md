@@ -4,7 +4,7 @@ This repository contains resources and instructions for setting up the framework
 
 ## Video
 
-[![Sim-to-Real Transfer Demo](media/Graphic_abstract.png)](https://www.youtube.com/embed/QmRLwfY-0To?si=J6UgT5NGmGmXUAz0)
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QmRLwfY-0To?si=J6UgT5NGmGmXUAz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
 ## Installation
