@@ -5,7 +5,7 @@
 
 </div>
 
-[![Sim-to-Real Overview](media/Graphic_abstract.png)](https://www.youtube.com/embed/QmRLwfY-0To?si=J6UgT5NGmGmXUAz0)
+[![Sim-to-Real Overview](media/Graphic_abstract.png)](https://www.youtube.com/embed/YhrxIjJJjGE?si=qaoPQPfXu_ZE_7iF)
 
 
 ## Installation
