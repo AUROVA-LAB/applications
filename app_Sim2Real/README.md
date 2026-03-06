@@ -1,7 +1,7 @@
 
 <div align="center" style="list-style: none;">
 
- # Sim-to-Real Transfer by Hybrid 3D Gaussian Splatting and LiDAR Reconstruction for Autonomous Driving <br>[Paper]() | [Project](https://aurova-projects.github.io/Sim2Real/)
+ # Sim-to-Real Transfer by Hybrid 3D Gaussian Splatting and LiDAR Reconstruction for Autonomous Driving <br>[Paper](https://www.sciencedirect.com/science/article/pii/S0952197626006536) | [Project](https://aurova-projects.github.io/Sim2Real/)
 
 </div>
 
@@ -185,4 +185,20 @@ There are several Python scripts in [scripts](./scripts) folder:
 - `record_rosbag_data.py`: Used to get the dataset from trajectories performed with tthe real robot.
 - `compress_rosbag.py`: Reduces the rosbag size discarting the images and LiDAR data.
 - `crop_rosbag.py`: Crop a rosbag, used to evaluate each lap of the long test routes.
+
+## Citation
+If you find our code or papers useful, please cite:
+```
+@article{olivas2026eaai,
+    title = {Sim-to-real transfer by hybrid Gaussian Splatting and geometric reconstruction for autonomous driving},
+    author = {Alejandro Olivas and Miguel Ángel Muñoz-Bañón and Fernando Torres},
+    journal = {Engineering Applications of Artificial Intelligence},
+    volume = {172},
+    pages = {114372},
+    year = {2026},
+    issn = {0952-1976},
+    doi = {https://doi.org/10.1016/j.engappai.2026.114372},
+    url = {https://www.sciencedirect.com/science/article/pii/S0952197626006536},
+}
+```
 
