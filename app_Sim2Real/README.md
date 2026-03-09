@@ -35,7 +35,7 @@ System requirements: Ubuntu 20.04 and ROS Noetic.
     - Clone the ROS packages at `catkin_ws/src/` and build them with `catkin_make`.
         - External ROS packages: [iri_base_algorithm](https://gitlab.iri.upc.edu/labrobotica/ros/iri_core/iri_base_algorithm), "sudo apt-get install ros-noetic-ackermann-\*", "sudo apt-get install ros-noetic-robot-state-\*", "sudo apt-get install ros-noetic-hector-\*".
         - Local ROS packages: [applications](https://github.com/AUROVA-LAB/applications), [aurova_preprocessed](https://github.com/AUROVA-LAB/aurova_preprocessed), [aurova_odom](https://github.com/AUROVA-LAB/aurova_odom),  [aurova_localization](https://github.com/AUROVA-LAB/aurova_localization), and [aurova_planning](https://github.com/AUROVA-LAB/aurova_planning).
-5. Follow the instructions of [aurova/reconstruction/hybrid_3dgs_mesh](https://github.com/AUROVA-LAB/aurova_reconstruction/tree/master/hybrid_3dgs_mesh) to build the simulated environments from real-world data.
+5. Follow the instructions of [aurova_reconstruction/hybrid_3dgs_mesh](https://github.com/AUROVA-LAB/aurova_reconstruction/tree/master/hybrid_3dgs_mesh) to build the simulated environments from real-world data.
 6. Install the [Sim2Real_local_planner](https://github.com/AUROVA-LAB/aurova_planning/tree/master/Sim2Real_local_planner).
 
 ## Usage
@@ -43,7 +43,7 @@ System requirements: Ubuntu 20.04 and ROS Noetic.
 ### CARLA Simulator Launch
 
 1. Launch CARLA Simulator by running `CarlaUE4.sh`.
-2. If you have followed the instructions of [aurova/reconstruction/hybrid_3dgs_mesh](https://github.com/AUROVA-LAB/aurova_reconstruction/tree/master/hybrid_3dgs_mesh), you should create a new map and add there the meshes. Place them at Z=0, and save the position in X and Y as the offset_GS of each scene in  `scripts/configGS.py` Unreal Engine shows the distances in cm, they should be converted to m.
+2. If you have followed the instructions of [aurova_reconstruction/hybrid_3dgs_mesh](https://github.com/AUROVA-LAB/aurova_reconstruction/tree/master/hybrid_3dgs_mesh), you should create a new map and add there the meshes. Place them at Z=0, and save the position in X and Y as the offset_GS of each scene in  `scripts/configGS.py` Unreal Engine shows the distances in cm, they should be converted to m.
 3. Once loaded, click `Play` and wait for the simulation to start.
 4. Optionally, launch the project for faster execution and to avoid loading the editor each time. The application should be saved in `.../carla/Unreal/CarlaUE4/Saved/StagedBuilds/LinuxNoEditor/`, and inside this folder edit `CarlaUE4/Config/DefaultEngine.ini` to change the initial map.
 
@@ -84,7 +84,7 @@ cd /app_Sim2Real/scripts/
 python generate_Gaussian_Splatting_images.py --scene NAME_SCENE --model_GS octreeGS
 ```
 
-Repeat the last instruction for each scene. PATH/TO/DATASET indicates the path of the dataset for autonomous navigation, while PATH/TO/3DGS/DATASET/ is the one generated with [aurova/reconstruction/hybrid_3dgs_mesh](https://github.com/AUROVA-LAB/aurova_reconstruction/tree/master/hybrid_3dgs_mesh), where the COLMAP/GLOMAP results are, as the camera model is load from those files. To generate with Gaussian Opacity Fields or Hierarchical-3DGS, launch the respective Docker image and change the `--model_GS` argument.
+Repeat the last instruction for each scene. PATH/TO/DATASET indicates the path of the dataset for autonomous navigation, while PATH/TO/3DGS/DATASET/ is the one generated with [aurova_reconstruction/hybrid_3dgs_mesh](https://github.com/AUROVA-LAB/aurova_reconstruction/tree/master/hybrid_3dgs_mesh), where the COLMAP/GLOMAP results are, as the camera model is load from those files. To generate with Gaussian Opacity Fields or Hierarchical-3DGS, launch the respective Docker image and change the `--model_GS` argument.
 
 - The structure of the obtained dataset is the following one:
 ```
