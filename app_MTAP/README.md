@@ -1,6 +1,6 @@
-# Overview
+# End-To-End Imitation Learning for Socially Aware Navigation using Memory-based Trajectory and Action Planning
 
-This repository contains resources and instructions for setting up and utilizing CARLA Simulator for pedestrian avoidance with the framework presented in [Memory-based Trajectory and Action Prediction](). Currently, the repository has the code for generating the dataset and for evaluating approaches on the pedestrian avoidance problem. The code, weigths and instructions of MTAP will be provided after the acceptance of the paper.
+This repository contains resources and instructions for setting up and utilizing CARLA Simulator for pedestrian avoidance with the framework presented in [End-To-End Imitation Learning for Socially Aware Navigation using Memory-based Trajectory and Action Planning](https://aurova-projects.github.io/MTAP/). This repository has the code for generating the dataset and for evaluating approaches on the presented socially aware navigation benchmark with CARLA simulator. The code and instructions of the presented MTAP approach are in [MTAP_local_planner](https://github.com/AUROVA-LAB/aurova_planning/tree/master/MTAP_local_planner).
 
 ![MTAP pedestrian avoidance](./media/MTAP_example1_compress.gif)
 
@@ -44,13 +44,15 @@ System requirements: Ubuntu 20.04 and ROS Noetic.
 
 The bash scripts [dataset_generation.sh](./scripts/dataset_generation.sh) and [evaluation_execution.sh](./scripts/evaluation_execution.sh) manage CARLA to spawn the vehicle, load the pedestrians and their routes, change to the specified weather of the route, and launching the ROS agent. 
 
+To train the MTAP neural network, follow the instructions of [MTAP_local_planner](https://github.com/AUROVA-LAB/aurova_planning/tree/master/MTAP_local_planner).
+
 For generating the dataset, follow the instructions of the bash script [dataset_generation.sh](./scripts/dataset_generation.sh). This script launch the expert agent (the dynamic version of our NVP algorithm) and save the 360 RGB-D images, the LiDAR data, the pedestrians' position (when they are close to the UGV), the desired Ackermann state and other measurements (goal coordinates, robot's pose, accelerometer, GPS...). Before executing it, load the respective town (with the suffix Aurova).
 ```
 roscd app_MTAP/scripts
 ./dataset_generation.sh
 ```
 
-In a similar way, follow the instructions of [evaluation_execution.sh](./scripts/evaluation_execution.sh) for evaluation. It is prepared to evaluate our static local planner NVP with ROS directly, and end-to-end methods through communication using ZeroMQ. In the last case, the agent should run in a separete terminal (Docker was used in our case). The metrics *Driving Score, Route Completion, Infraction Penalty, Robot Interaction Performance* and *Pedestrian Interaction Performance* are saved for each route. You could see `aurova_planning/MTAP_local_planning/agent.py` (when available) and edit [listener_agent.py](./scripts/listener_agent.py) for adding new architectures and communicate the method with the agent.
+In a similar way, follow the instructions of [evaluation_execution.sh](./scripts/evaluation_execution.sh) for evaluation. It is prepared to evaluate our static local planner NVP with ROS directly, and end-to-end methods through communication using ZeroMQ. In the last case, the agent should run in a separete terminal (Docker was used in our case). The metrics *Driving Score, Route Completion, Infraction Penalty, Robot Interaction Performance* and *Pedestrian Interaction Performance* are saved for each route. You could see [aurova_planning/MTAP_local_planning/agent.py](https://github.com/AUROVA-LAB/aurova_planning/blob/master/MTAP_local_planner/agent.py) and edit [listener_agent.py](./scripts/listener_agent.py) for adding new architectures and communicate the method with the agent.
 
 
 #### Utils
