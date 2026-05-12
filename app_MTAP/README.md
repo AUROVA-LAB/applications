@@ -21,7 +21,7 @@ System requirements: Ubuntu 20.04 and ROS Noetic.
     cd <path/to/carla>/PythonAPI/carla/dist/
     pip install <carla_wheel>.whl
     ```
-    Add the source path for the ROS bridge workspace. `source /path/to/catkin_ws/devel/setp.bash`. To add it permanently:
+    Add the source path for the ROS bridge workspace. `source /path/to/catkin_ws/devel/setup.bash`. To add it permanently:
     ```
     echo "source /path/to/catkin_ws/devel/setp.bash" >> ~/.bashrc
     ```

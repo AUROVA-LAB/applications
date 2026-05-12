@@ -64,7 +64,7 @@ import math
 import random
 import re
 import weakref
-from utils import *
+from utils_carla import *
 from config import *
 import screeninfo
 
@@ -927,7 +927,7 @@ def main():
     logging.info('listening to server %s:%s', args.host, args.port)
 
     print(__doc__)
-
+    
     try:
 
         game_loop(args)

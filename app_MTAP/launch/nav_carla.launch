@@ -4,7 +4,7 @@
   <rosparam command="load" file="$(find app_MTAP)/params/nav_carla.yaml" subst_value="true"/>
 
   <!-- For spawning the vehicle in carla, do not use the OpenStreetMap, use the one with the locations in XYZ -->
-  <arg name="map" default="$(optenv CARLA_MAP /media/alolivas/MSI_500/aurova_carla/carla/PythonAPI/aurova/routes/Town01.xml)"/>
+  <arg name="map" default="$(optenv CARLA_MAP /media/alolivas/MSI_500/aurova_carla/carla/PythonAPI/aurova/routes/ScientificPark.xml)"/>
   <arg name="way" default="$(optenv CARLA_WAY 1)" />
   <!--  -->
 
@@ -28,7 +28,7 @@
   
   <!-- Fusion-based localization by optimization process -->
   <include file="$(find geo_localization)/launch/node.launch" >
-    <arg name="output" value="log"/>
+    <arg name="output" value="screen"/>
   </include>
 
   <include file="$(find pc2image)/launch/carla_image.launch" />

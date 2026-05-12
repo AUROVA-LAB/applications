@@ -26,23 +26,23 @@ output_dir=/home/alolivas/aurova-lab/labrobotica/dataset/CARLA_dataset
 pedestrian_routes_prefix=routes/pedestrian_routes/
 
 #Town01
-export CARLA_MAP="/media/alolivas/MSI_500/aurova_carla/carla/PythonAPI/aurova/routes/Town01.xml"
-export OSM_ROS="/home/alolivas/aurova-lab/aurova_ws/src/applications/app_MTAP/paths/Town01.osm"
-export LAT_ZERO="38.38164422311365"
-export LON_ZERO="-0.5255029920793286"
+# export CARLA_MAP="/media/alolivas/MSI_500/aurova_carla/carla/PythonAPI/aurova/routes/Town01.xml"
+# export OSM_ROS="/home/alolivas/aurova-lab/aurova_ws/src/applications/app_MTAP/paths/Town01.osm"
+# export LAT_ZERO="38.38164422311365"
+# export LON_ZERO="-0.5255029920793286"
 
-way_id_train=(1 -1 -1 2 -2 3 -3 -3 4 4 -4)
-pedestrian_routes_train=(Town01_experiment1.xml Town01_experiment1.xml Town01_experiment1.xml Town01_experiment2.xml Town01_experiment2.xml Town01_experiment3.xml Town01_experiment3.xml Town01_experiment3.xml Town01_experiment4.xml Town01_experiment4.xml Town01_experiment4.xml)
-weather_train=(4 4 0 4 2 5 5 4 6 1 0)
-close_loop_train=("1 2 3 0" "3 2 1 0" "3 2 1 0" "1 0 3 0" "3 0 1 0" "2 3 0" "3 2 1" "3 2 1" "1 2 3 2" "1 2 3 2" "3 2 1 2")
+# way_id_train=(1 -1 -1 2 -2 3 -3 -3 4 4 -4)
+# pedestrian_routes_train=(Town01_experiment1.xml Town01_experiment1.xml Town01_experiment1.xml Town01_experiment2.xml Town01_experiment2.xml Town01_experiment3.xml Town01_experiment3.xml Town01_experiment3.xml Town01_experiment4.xml Town01_experiment4.xml Town01_experiment4.xml)
+# weather_train=(4 4 0 4 2 5 5 4 6 1 0)
+# close_loop_train=("1 2 3 0" "3 2 1 0" "3 2 1 0" "1 0 3 0" "3 0 1 0" "2 3 0" "3 2 1" "3 2 1" "1 2 3 2" "1 2 3 2" "3 2 1 2")
 
-way_id_val=(1 2 3 -4)
-pedestrian_routes_val=(Town01_experiment1.xml Town01_experiment2.xml Town01_experiment3.xml Town01_experiment4.xml)
-weather_val=(1 4 4 6)
-close_loop_val=("1 2 3 0" "1 0 3 0" "2 3 0" "3 2 1 2")
+# way_id_val=(1 2 3 -4)
+# pedestrian_routes_val=(Town01_experiment1.xml Town01_experiment2.xml Town01_experiment3.xml Town01_experiment4.xml)
+# weather_val=(1 4 4 6)
+# close_loop_val=("1 2 3 0" "1 0 3 0" "2 3 0" "3 2 1 2")
 
-output_train=${output_dir}/train/Town01_session
-output_val=${output_dir}/val/Town01_session
+# output_train=${output_dir}/train/Town01_session
+# output_val=${output_dir}/val/Town01_session
 
 #Town03
 # export CARLA_MAP="/media/alolivas/MSI_500/aurova_carla/carla/PythonAPI/aurova/routes/Town03.xml"
@@ -60,8 +60,8 @@ output_val=${output_dir}/val/Town01_session
 # weather_val=(1 4 4 6)
 # close_loop_val=("5432106")
 
-# output_train=${output_train}/train/Town03_session
-# output_val=${output_train}/val/Town03_session
+# output_train=${output_dir}/train/Town03_session
+# output_val=${output_dir}/val/Town03_session
 
 #Town04
 # export CARLA_MAP="/media/alolivas/MSI_500/aurova_carla/carla/PythonAPI/aurova/routes/Town04.xml"
@@ -79,8 +79,8 @@ output_val=${output_dir}/val/Town01_session
 # weather_val=(6)
 # close_loop_val=("1234567091080")
 
-# output_train=${output_train}/train/Town04_session
-# output_val=${output_train}/val/Town04_session
+# output_train=${output_dir}/train/Town04_session
+# output_val=${output_dir}/val/Town04_session
 
 #Town05
 # export CARLA_MAP="/media/alolivas/MSI_500/aurova_carla/carla/PythonAPI/aurova/routes/Town05.xml"
@@ -98,8 +98,27 @@ output_val=${output_dir}/val/Town01_session
 # weather_val=(6)
 # close_loop_val=("1211109876543210")
 
-# output_train=${output_train}/train/Town05_session
-# output_val=${output_train}/val/Town05_session
+# output_train=${output_dir}/train/Town05_session
+# output_val=${output_dir}/val/Town05_session
+
+#Town03
+export CARLA_MAP="/home/alolivas/aurova-lab/aurova_ws/src/applications/app_MTAP/scripts/routes/Town03.xml"
+export OSM_ROS="/home/alolivas/aurova-lab/aurova_ws/src/applications/app_MTAP/paths/Town03.osm"
+export LAT_ZERO="38.3811"
+export LON_ZERO="0.001"
+
+way_id_train=(2 3)
+pedestrian_routes_train=(Town03_experiment2_full.xml Town03_experiment2_full.xml)
+close_loop_train=("8 9 10 11 9" "7 10" "11 10 9 8")
+weather_train=(1 2)
+
+way_id_val=(4)
+pedestrian_routes_val=(Town03_experiment2_full.xml)
+close_loop_val=("11 10 9 8")
+weather_val=(6)
+
+output_train=${output_dir}/train/Town03_session
+output_val=${output_dir}/val/Town03_session
 
 export PATH_DATASET="${output_train}"
 for ((i=$start_train; i<${#way_id_train[@]}; i++))

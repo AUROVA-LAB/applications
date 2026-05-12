@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+
+    <node pkg="merged_channels_ouster" name="merge_channels" type="merge_channels_ouster.py"></node>
+    <node pkg="image2pcl"   type="image2pcl_node" name="image2pcl" output="screen">
+        <param name="range_img"                    type="str"    value="/ouster/range_image" />
+        <param name="mask_img"                     type="str"    value="/ground_lines_img" /> 
+        <param name="out_pc"                       type="str"    value="/ouster/points" /> 
+        <param name="out_detections"               type="str"    value="/ground_lines_pc" />
+        <param name="include_detections"           type="bool"   value="true" /> 
+        <param name="include_pc"                   type="bool"   value="true" /> 
+    </node>
+
+  
+</launch>

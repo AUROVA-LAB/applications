@@ -1,4 +1,5 @@
 import os
+import numpy as np
 #Config file for variables used by multiple files
 
 PATH_DATASET = os.getenv("PATH_DATASET")
@@ -6,12 +7,12 @@ if PATH_DATASET is None: PATH_DATASET = "/home/alolivas/aurova-lab/labrobotica/d
 ROUTE_FILENAME = os.getenv("CARLA_MAP")
 if ROUTE_FILENAME is None: ROUTE_FILENAME = "./routes/Town01.xml" 
 PEDESTRIANS_ROUTES_FILE = os.getenv("PEDESTRIAN_ROUTES")
-if PEDESTRIANS_ROUTES_FILE is None: PEDESTRIANS_ROUTES_FILE="routes/pedestrian_routes/Town01_evaluation5.xml"
+if PEDESTRIANS_ROUTES_FILE is None: PEDESTRIANS_ROUTES_FILE="routes/pedestrian_routes/Town03_evaluation2_full.xml"
 WAY_ID = os.getenv("CARLA_WAY")
-if WAY_ID is None: WAY_ID = 14
+if WAY_ID is None: WAY_ID = 26
 else: WAY_ID = int(WAY_ID)
 PATH_RESULTS = os.getenv("CARLA_RESULTS_PATH")
-if PATH_RESULTS is None: PATH_RESULTS ="/media/alolivas/MSI_500/aurova_carla/carla/PythonAPI/aurova/results_metrics/"
+if PATH_RESULTS is None: PATH_RESULTS ="/Sim2Real/results/"
 
 PENALTY_COLLISION_SLIGHT=0.9
 PENALTY_COLLISION_STATIC=0.65
@@ -32,3 +33,14 @@ KD = 0.5
 
 DEG2RAD = 3.1415927/180.0
 FPS=10
+# BASE2CAMERA = np.array([[0.022622,  0.014503,  0.999639, 0.08],
+#                        [-0.005127,  0.999883, -0.014391, 0.00106],
+#                        [-0.999731, -0.0048  ,  0.022694, 0],
+#                        [0,0,0,1]])
+BASE2CAMERA = np.array([[1, 0, 0, 0.2012],
+                       [0, 1, 0, -0.0106],
+                       [0, 0, 1, 1.0381],
+                       [0,0,0,1]])
+VIEW_ANGLE = np.array([[0, 1, 0],
+                       [-1, 0, 0],
+                       [0, 0, 1]])

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>app_MTAP</name>
+  <name>app_sim2real</name>
   <version>0.0.0</version>
   <description>The application package for Sim-to-Real Transfer by Hybrid 3D Gaussian Splatting and LiDAR Reconstruction for Autonomous Driving</description>
 

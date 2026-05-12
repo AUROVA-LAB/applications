@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<map>
+    <node id="0" pose_x="2.58" pose_y="0.37" yaw="0.0"/>
+    <node id="1" pose_x="37.5" pose_y="-1.73" yaw="180.0"/>
+    <node id="2" pose_x="37.5" pose_y="-9.6" yaw="180.0"/>
+    <node id="3" pose_x="2.58" pose_y="-7.08" yaw="180.0"/>
+    <node id="4" pose_x="2.58" pose_y="8.16" yaw="0.0"/>
+    <node id="5" pose_x="37.5" pose_y="6.08" yaw="0.0"/>
+
+    <node id="6" pose_x="-80.2" pose_y="70" yaw="0.0"/>
+    <node id="7" pose_x="-60.7" pose_y="70" yaw="0.0"/>
+    <node id="8" pose_x="-47" pose_y="70" yaw="0.0"/>
+    <node id="9" pose_x="-47" pose_y="108" yaw="0.0"/>
+    <node id="10" pose_x="-58.8" pose_y="103.2" yaw="0.0"/>
+    <node id="11" pose_x="-77.7" pose_y="95.3" yaw="0.0"/>
+
+    <node id="12" pose_x="33.4" pose_y="-196" yaw="0.0"/>
+    <node id="13" pose_x="33.8" pose_y="-192.4" yaw="0.0"/>
+    <node id="14" pose_x="33.4" pose_y="-199.7" yaw="0.0"/>
+    <node id="15" pose_x="46.3" pose_y="-197.6" yaw="0.0"/>
+    <node id="16" pose_x="46.5" pose_y="-193.6" yaw="0.0"/>
+    <node id="17" pose_x="46.2" pose_y="-200.9" yaw="0.0"/>
+    <node id="18" pose_x="56.7" pose_y="-198.6" yaw="0.0"/>
+    <node id="19" pose_x="57" pose_y="-194.9" yaw="0.0"/>
+
+    <node id="20" pose_x="-177.2" pose_y="-202.6" yaw="0.0"/>
+    <node id="21" pose_x="-134" pose_y="-205" yaw="180.0"/>
+
+    <node id="22" pose_x="-105.8" pose_y="-379.5" yaw="0.0"/>
+    <node id="23" pose_x="-75.5" pose_y="-381.6" yaw="0.0"/>
+    <node id="24" pose_x="-45.5" pose_y="-382.4" yaw="0.0"/>
+    <node id="25" pose_x="-25.6" pose_y="-379.8" yaw="0.0"/>
+    <node id="26" pose_x="-12.1" pose_y="-384" yaw="0.0"/>
+    <node id="27" pose_x="-23.3" pose_y="-347.9" yaw="0.0"/>
+    <node id="28" pose_x="-47.9" pose_y="-359.5" yaw="0.0"/>
+    <node id="29" pose_x="-63.1" pose_y="-345.5" yaw="0.0"/>
+    <node id="30" pose_x="-104.8" pose_y="-345.1" yaw="0.0"/>
+    <node id="31" pose_x="-13.2" pose_y="-344.2" yaw="0.0"/>
+
+    <node id="32" pose_x="113.58" pose_y="-346.37" yaw="0.0"/>
+    <node id="33" pose_x="148.5" pose_y="-347.73" yaw="180.0"/>
+    <node id="34" pose_x="148.5" pose_y="-355.6" yaw="180.0"/>
+    <node id="35" pose_x="113.58" pose_y="-353.08" yaw="180.0"/>
+    <node id="36" pose_x="113.58" pose_y="-337.84" yaw="0.0"/>
+    <node id="37" pose_x="148.5" pose_y="-339.92" yaw="0.0"/>
+
+    <node id="38" pose_x="54.2" pose_y="-482" yaw="0.0"/>
+    <node id="39" pose_x="73.3" pose_y="-482" yaw="0.0"/>
+    <node id="40" pose_x="87" pose_y="-482" yaw="0.0"/>
+    <node id="41" pose_x="87" pose_y="-444" yaw="0.0"/>
+    <node id="42" pose_x="75.2" pose_y="-448.2" yaw="0.0"/>
+    <node id="43" pose_x="56.3" pose_y="-456.7" yaw="0.0"/>
+
+    <!-- Train routes scene 1 -->
+    <way id="1">
+        <nd ref="0"/>
+        <nd ref="1"/>
+        <nd ref="2"/>
+        <nd ref="1"/>
+    </way>
+
+    <way id="2">
+        <nd ref="2"/>
+        <nd ref="3"/>
+        <nd ref="4"/>
+    </way>
+
+    <way id="3">
+        <nd ref="4"/>
+        <nd ref="5"/>
+        <nd ref="2"/>
+    </way>
+
+    <way id="4">
+        <nd ref="1"/>
+        <nd ref="0"/>
+        <nd ref="4"/>
+        <nd ref="0"/>
+    </way>
+
+    <way id="5">
+        <nd ref="5"/>
+        <nd ref="2"/>
+        <nd ref="5"/>
+        <nd ref="2"/>
+        <nd ref="1"/>
+    </way>
+
+    <way id="6">
+        <nd ref="3"/>
+        <nd ref="4"/>
+        <nd ref="5"/>
+    </way>
+
+    <!-- Evaluation scene 1-->
+    <way id="7">
+        <nd ref="3"/>
+        <nd ref="4"/>
+        <nd ref="3"/>
+        <nd ref="4"/>
+        <nd ref="0"/>
+    </way>
+    
+    <way id="8">
+        <nd ref="0"/>
+        <nd ref="3"/>
+        <nd ref="2"/>
+    </way>
+
+    <way id="9">
+        <nd ref="1"/>
+        <nd ref="5"/>
+        <nd ref="4"/>
+    </way>
+
+    <way id="10">
+        <nd ref="1"/>
+        <nd ref="0"/>
+        <nd ref="3"/>
+        <nd ref="0"/>
+    </way>
+
+    <way id="11">
+        <nd ref="0"/>
+        <nd ref="1"/>
+        <nd ref="2"/>
+        <nd ref="3"/>
+        <nd ref="4"/>
+        <nd ref="5"/>
+        <nd ref="1"/>
+        <nd ref="0"/>
+        <nd ref="3"/>
+        <nd ref="2"/>
+        <nd ref="5"/>
+        <nd ref="4"/>
+        <nd ref="0"/>
+    </way>
+
+    <!-- Train route scene 2 -->
+    <way id="12">
+        <nd ref="6"/>
+        <nd ref="7"/>
+        <nd ref="8"/>
+        <nd ref="9"/>
+        <nd ref="10"/>
+        <nd ref="11"/>
+    </way>
+
+    <way id="13">
+        <nd ref="11"/>
+        <nd ref="10"/>
+        <nd ref="9"/>
+        <nd ref="8"/>
+        <nd ref="7"/>
+        <nd ref="6"/>
+    </way>
+
+    <way id="14">
+        <nd ref="8"/>
+        <nd ref="9"/>
+        <nd ref="10"/>
+    </way>
+
+    <way id="15">
+        <nd ref="8"/>
+        <nd ref="9"/>
+        <nd ref="8"/>
+    </way>
+
+
+    <!-- Evaluation route scene 2 -->
+    <way id="16">
+        <nd ref="8"/>
+        <nd ref="7"/>
+        <nd ref="6"/>
+    </way>
+
+    <way id="17">
+        <nd ref="10"/>
+        <nd ref="9"/>
+        <nd ref="10"/>
+        <nd ref="11"/>
+    </way>
+
+
+    <!-- Train route scene 3 -->
+    <way id="18">
+        <nd ref="12"/>
+        <nd ref="18"/>
+        <nd ref="12"/>
+    </way>
+
+    <way id="19">
+        <nd ref="13"/>
+        <nd ref="18"/>
+    </way>
+
+    <way id="20">
+        <nd ref="19"/>
+        <nd ref="12"/>
+    </way>
+
+    <way id="21">
+        <nd ref="14"/>
+        <nd ref="18"/>
+        <nd ref="12"/>
+    </way>
+
+    <way id="22">
+        <nd ref="18"/>
+        <nd ref="12"/>
+        <nd ref="18"/>
+    </way>
+
+    <!-- Evaluation route scene 3 -->
+    <way id="23">
+        <nd ref="16"/>
+        <nd ref="18"/>
+        <nd ref="12"/>
+    </way>
+
+    <!-- Train routes scene 4 -->
+    <way id="24">
+        <nd ref="20"/>
+        <nd ref="21"/>
+    </way>
+
+    <!-- Evaluation routes scene 4 -->
+    <way id="25">
+        <nd ref="21"/>
+        <nd ref="20"/>
+    </way>
+
+    <!-- Test route 1 -->
+    <way id="26">
+        <nd ref="22"/>
+        <nd ref="23"/>
+        <nd ref="24"/>
+        <nd ref="25"/>
+        <nd ref="26"/>
+        <nd ref="31"/>
+        <nd ref="27"/>
+        <nd ref="28"/>
+        <nd ref="29"/>
+        <nd ref="30"/>
+        <nd ref="22"/>
+    </way>
+
+    <way id="27">
+        <nd ref="24"/>
+        <nd ref="25"/>
+        <nd ref="26"/>
+    </way>
+
+    <way id="28">
+        <nd ref="26"/>
+        <nd ref="31"/>
+        <nd ref="27"/>
+    </way>
+
+    <way id="29">
+        <nd ref="28"/>
+        <nd ref="29"/>
+        <nd ref="30"/>
+    </way>
+
+    <way id="30">
+        <nd ref="28"/>
+        <nd ref="29"/>
+        <nd ref="30"/>
+         <nd ref="22"/>
+    </way>
+
+    <!-- Train routes scene 1 gof-->
+    <way id="31">
+        <nd ref="32"/>
+        <nd ref="33"/>
+        <nd ref="34"/>
+        <nd ref="33"/>
+    </way>
+
+    <way id="32">
+        <nd ref="34"/>
+        <nd ref="35"/>
+        <nd ref="36"/>
+    </way>
+
+    <way id="33">
+        <nd ref="36"/>
+        <nd ref="37"/>
+        <nd ref="34"/>
+    </way>
+
+    <way id="34">
+        <nd ref="33"/>
+        <nd ref="32"/>
+        <nd ref="36"/>
+        <nd ref="32"/>
+    </way>
+
+    <way id="35">
+        <nd ref="37"/>
+        <nd ref="34"/>
+        <nd ref="37"/>
+        <nd ref="34"/>
+        <nd ref="33"/>
+    </way>
+
+    <way id="36">
+        <nd ref="35"/>
+        <nd ref="36"/>
+        <nd ref="37"/>
+    </way>
+
+    <!-- Evaluation scene 1 gof-->
+    <way id="37">
+        <nd ref="35"/>
+        <nd ref="36"/>
+        <nd ref="35"/>
+        <nd ref="36"/>
+        <nd ref="32"/>
+    </way>
+    
+    <way id="38">
+        <nd ref="32"/>
+        <nd ref="35"/>
+        <nd ref="34"/>
+    </way>
+
+    <way id="39">
+        <nd ref="33"/>
+        <nd ref="37"/>
+        <nd ref="36"/>
+    </way>
+
+    <way id="40">
+        <nd ref="33"/>
+        <nd ref="32"/>
+        <nd ref="35"/>
+        <nd ref="32"/>
+    </way>
+
+    <!-- Train route scene 2 gof -->
+    <way id="41">
+        <nd ref="38"/>
+        <nd ref="39"/>
+        <nd ref="40"/>
+        <nd ref="41"/>
+        <nd ref="42"/>
+        <nd ref="43"/>
+    </way>
+
+    <way id="42">
+        <nd ref="43"/>
+        <nd ref="42"/>
+        <nd ref="41"/>
+        <nd ref="40"/>
+        <nd ref="39"/>
+        <nd ref="38"/>
+    </way>
+
+    <way id="43">
+        <nd ref="40"/>
+        <nd ref="41"/>
+        <nd ref="42"/>
+    </way>
+
+    <way id="44">
+        <nd ref="40"/>
+        <nd ref="41"/>
+        <nd ref="40"/>
+    </way>
+
+
+    <!-- Evaluation route scene 2 gof -->
+    <way id="45">
+        <nd ref="40"/>
+        <nd ref="39"/>
+        <nd ref="38"/>
+    </way>
+
+    <way id="46">
+        <nd ref="42"/>
+        <nd ref="41"/>
+        <nd ref="42"/>
+        <nd ref="43"/>
+    </way>
+
+
+
+</map>

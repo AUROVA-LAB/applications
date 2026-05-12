@@ -10,7 +10,6 @@ from carla import ColorConverter as cc
 import math
 import cv2
 import re
-import open3d as o3d
 
 
 def ReadRouteFromXML(filename, id_way=None):
@@ -461,7 +460,6 @@ class Callback360img(object):
 # -- LiDAR ------------------------------------------------------------
 # ==============================================================================
 
-
 class LidarSensor (object):
     def __init__(self, parent_actor,hud=None):
         self.sensor = None
@@ -494,27 +492,92 @@ class LidarSensor (object):
         lidar_img[tuple(lidar_data.T)] = (255, 255, 255)
         surface = pygame.surfarray.make_surface(lidar_img)
         display.blit(surface, (0, 0))
-
-    # def voxelize(self, voxel_size=0.25):
-    #     points = self._pointcloud[:,:3]
-    #     pcd = o3d.geometry.PointCloud()
-    #     pcd.points = o3d.utility.Vector3dVector(points)
-    #     voxel_grid=o3d.geometry.VoxelGrid.create_from_point_cloud(pcd,voxel_size)
-
-    #     # Extract the voxel centroids
-    #     voxel_centroids = np.asarray([voxel.grid_index for voxel in voxel_grid.get_voxels()])
-
-    #     # Convert the voxel centroids to the original coordinates
-    #     voxel_centroids = voxel_centroids * voxel_size + voxel_grid.origin
-    #     self._pointcloud=voxel_centroids
     
     @staticmethod
     def _Lidar_callback(weak_self, lidar_data):
         self = weak_self()
         self._pointcloud = np.frombuffer(lidar_data.raw_data, dtype=np.dtype('f4'))
         self._pointcloud = np.reshape(self._pointcloud, (int(self._pointcloud.shape[0] / 4), 4))
-        # self.voxelize()
+
+#LiDAR sensor for Sim2Real project.
+#TODO the new files should be upload in other application folder.
+class LidarSensor2 (object):
+    def __init__(self, parent_actor,hud=None):
+        self.sensor = None
+        self.hud=hud
+        self._parent = parent_actor
+        self._pointcloud = None
+        self.range_image = None
+        self.range_distance = None
+        world = self._parent.get_world()
+        bp = world.get_blueprint_library().find('sensor.lidar.ray_cast')
+        bp.set_attribute('channels', "128")
+        bp.set_attribute('range', "50")
+        bp.set_attribute('upper_fov', "22.5")
+        bp.set_attribute('lower_fov', "-22.5")
+        bp.set_attribute('sensor_tick', "0.1")
+        bp.set_attribute('points_per_second', "2621440")
+        self.sensor = world.spawn_actor(bp, carla.Transform(carla.Location(x=0.17, z=1.16)), 
+                attach_to=self._parent, attachment_type=carla.AttachmentType.Rigid)
+        weak_self = weakref.ref(self)
+        self.sensor.listen(
+            lambda lidar_data: LidarSensor2._Lidar_callback(weak_self, lidar_data))
         
+    def render(self,display):
+        lidar_data = np.array(self._pointcloud[:, :2])
+        lidar_data *= min(self.hud.dim) / (2.0 * 50.0) #50 = lidar_range
+        lidar_data += (0.5 * self.hud.dim[0], 0.5 * self.hud.dim[1])
+        lidar_data = np.fabs(lidar_data)  # pylint: disable=E1111
+        lidar_data = lidar_data.astype(np.int32)
+        lidar_data = np.reshape(lidar_data, (-1, 2))
+        lidar_img_size = (self.hud.dim[0], self.hud.dim[1], 3)
+        lidar_img = np.zeros((lidar_img_size), dtype=np.uint8)
+        lidar_img[tuple(lidar_data.T)] = (255, 255, 255)
+        surface = pygame.surfarray.make_surface(lidar_img)
+        display.blit(surface, (0, 0))
+
+    def render_range(self, display):
+        if self.range_image is not None:
+            array=cv2.resize(self.range_image, dsize=(128,self.hud.dim[0]))
+            array=(array/256).astype('uint8')
+            array = cv2.cvtColor(array, cv2.COLOR_GRAY2RGB)
+            surface=pygame.surfarray.make_surface(array)
+            display.blit(surface, (0, self.hud.dim[1]))
+    
+    @staticmethod
+    def _Lidar_callback(weak_self, lidar_data):
+        self = weak_self()
+        self._pointcloud = np.frombuffer(lidar_data.raw_data, dtype=np.dtype('f4'))
+        self._pointcloud = np.reshape(self._pointcloud, (int(self._pointcloud.shape[0] / 4), 4))
+        self.generate_range_image(lidar_data)
+
+    def generate_range_image(self, lidar_data):
+        # Discard invalid data (when initialization and when the program is closed)
+        for channel in range(lidar_data.channels):
+            if lidar_data.get_point_count(channel) == 0: return
+        if len(self._pointcloud) > 300000: return
+        #Calculate the distances.
+        ranges = np.linalg.norm(self._pointcloud[:, :3], axis=1)
+        max_range = 50.0  # Set your max range
+        ranges = np.clip(ranges, 0, max_range)
+        distance = np.copy(ranges)
+        # The close objects are white, the far objects are black
+        ranges = max_range - ranges
+        ranges = (ranges / max_range * 65535).astype(np.uint16)
+        azimuth = np.arctan2(self._pointcloud[:,1], self._pointcloud[:,0])
+
+        #Create the image
+        index = 0
+        start_row_index = 0
+        range_image = np.zeros((128,2048),dtype=np.uint16)
+        self.range_distance = np.full((128,2048),50.0,dtype=np.float32)
+        for channel in range(lidar_data.channels):
+            for index in range(start_row_index, lidar_data.get_point_count(channel)+start_row_index):
+                pixel = int((azimuth[index] + np.pi) / (2.0 * np.pi) * 2047)
+                range_image[channel,pixel-2:pixel+3]=ranges[index]
+                self.range_distance[channel,pixel-2:pixel+3]=distance[index] #Used to calculate the close distance
+            start_row_index += lidar_data.get_point_count(channel)
+        self.range_image=range_image.swapaxes(0, 1)
 
 class LidarSensorLink (object):
     def __init__(self, sensor):
@@ -692,9 +755,20 @@ class CameraManager(object):
         self.recording = not self.recording
         self.hud.notification('Recording %s' % ('On' if self.recording else 'Off'))
 
-    def render(self, display):
+    def render(self, display, small = False, offset4waypoints=False):
         if self.surface is not None:
-            display.blit(self.surface, (0, 0))
+            if not small:
+                display.blit(self.surface, (0, 0))
+            else:
+                cv_image=self._image.swapaxes(0,1)
+                cv_image=cv2.resize(cv_image, dsize=(int(self.hud.dim[0]/4), int(self.hud.dim[1]/4)), interpolation = cv2.INTER_LINEAR)
+                self.surface=pygame.surfarray.make_surface(cv_image.swapaxes(0,1))
+                if offset4waypoints:
+                    display.blit(self.surface, (int(self.hud.dim[0]*3/4-self.hud.dim[1]/4),0))
+                else:
+                    display.blit(self.surface, (int(self.hud.dim[0]*3/4),0))
+                
+
 
     @staticmethod
     def _parse_image(weak_self, image):

@@ -30,7 +30,7 @@ from carla import ColorConverter as cc
 
 import argparse
 import math
-from utils import *
+from utils_carla import *
 from config import *
 from fnmatch import fnmatch
 import json
@@ -174,10 +174,10 @@ class Evaluator(object):
                 self.slight_collided_pedestrians.remove(id)
     
     def check_events(self):
-        if self.offroad and self.lane_invasion_sensor.lane_invasion_event:
-            self.infraction_score*=PENALTY_OFF_ROAD
-            self.lane_invasion_sensor.lane_invasion_event=False
-            self.statistics["off_road"]+=1
+        # if self.offroad and self.lane_invasion_sensor.lane_invasion_event:
+        #     self.infraction_score*=PENALTY_OFF_ROAD
+        #     self.lane_invasion_sensor.lane_invasion_event=False
+        #     self.statistics["off_road"]+=1
 
         #Check if exit from local minimum
         robot_pose=self.player.get_location()
@@ -264,7 +264,10 @@ class Evaluator(object):
                              (pose.y-self.pedestrian_traj[id]["pose"].y)**2)
         optimal_time=distance/self.pedestrian_traj[id]["speed"]
         real_time=self.get_time()-self.pedestrian_traj[id]["time"]
-        score=optimal_time/real_time
+        if optimal_time<5.0:
+            score=1.0
+        else:
+            score=optimal_time/real_time
         if score<self.pedestrian_traj[id]["min_score"]:
             self.pedestrian_traj[id]["min_score"]=score
     
@@ -337,7 +340,7 @@ class Evaluator(object):
                 count+=1
         if count>0: 
             self.statistics["robot_traj_metric"]/=count
-        else: self.statistics["robot_traj_metric"]=0.0
+        else: self.statistics["robot_traj_metric"]=1.0
 
     
     def is_intersection(self, actor):

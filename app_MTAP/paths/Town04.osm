@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6" generator="CGImap 0.7.5 (16168 thorn-03.openstreetmap.org)" copyright="OpenStreetMap and contributors" attribution="http://www.openstreetmap.org/copyright" license="http://opendatacommons.org/licenses/odbl/1-0/">
- <bounds minlat="-0.003" minlon="-0.0001" maxlat="0.0001" maxlon="0.004"/>
+ <bounds minlat="38.380" minlon="-0.526" maxlat="38.382" maxlon="-0.522"/>
 
  <node id="0" lat="38.38387201071197" lon="0.0029680560061341086" />
  <node id="1" lat="38.38387201071197" lon="0.003586878493899521" />

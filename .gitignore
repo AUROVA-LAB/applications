@@ -1,4 +1,10 @@
 #gitignore
 *.csv
+app_MTAP/scripts/videos/
+app_MTAP/results/
+app_MTAP/scripts/sfm_agent.py
+app_MTAP/scripts/record_rosbag_data.py
+app_Sim2Real/scripts/videos/
+*__pycache__*
 
 

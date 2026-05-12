@@ -8,7 +8,7 @@
 
 # Allows controlling a vehicle listening a network (which ca be execute in a docker).
 """
-CARLA agent using transformer network
+CARLA agent using end-to-end network
 
 The program will be closed when the route is complented.
 
@@ -54,7 +54,7 @@ import datetime
 import logging
 import math
 import random
-from utils import *
+from utils_carla import *
 from config import *
 import json
 import zmq

@@ -24,7 +24,7 @@ from carla import VehicleLightState as vls
 
 import argparse
 import logging
-from utils import *
+from utils_carla import *
 from numpy import random
 
 def get_actor_blueprints(world, filter, generation):

@@ -1,6 +1,6 @@
 import carla
 import argparse
-from utils import *
+from utils_carla import *
 
 class ChangeWeather(object):
     def __init__(self, carla_world):

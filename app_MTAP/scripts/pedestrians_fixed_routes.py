@@ -31,7 +31,7 @@ import logging
 import math
 import numpy as np
 from numpy import random
-from utils import get_actor_blueprints, ReadPedestrianRoutesFromXML, CollisionEvaluator
+from utils_carla import get_actor_blueprints, ReadPedestrianRoutesFromXML, CollisionEvaluator
 from evaluator import Evaluator
 from config import *
 
@@ -88,6 +88,7 @@ def main():
         metavar='NAME',
         default='*blue*',
         help='wildcard_pattern of the actor(default: "*blue*")')
+    #TODO check if it is PSC
     argparser.add_argument(
         '--margin',
         metavar='P',
@@ -102,6 +103,12 @@ def main():
         '--check_safety_stop',"-s",
         action='store_true',
         help='Penalize when a safety stop happens.')
+    argparser.add_argument(
+        '--random_prob',
+        metavar='P',
+        default=0.0,
+        type=float,
+        help='Probability per second to change the target randomly (default=0.0)')
     argparser.add_argument(
         '--pedestrian_routes',
         metavar='P',
@@ -177,6 +184,7 @@ def main():
             if walker_bp.has_attribute('speed'):
                 if (random.random() > percentagePedestriansRunning):
                     # walking
+                    # walker_speed.append(walker_bp.get_attribute('speed').recommended_values[1])
                     walker_speed.append(walker_bp.get_attribute('speed').recommended_values[1])
                 else:
                     # running
@@ -256,18 +264,40 @@ def main():
 
         print('spawned  %d walkers, press Ctrl+C to exit.' % (len(walkers_list)))
 
-
+        tmp_target = [carla.Location() for _ in range(number_of_walkers)] #Use z to control if active
+        prev_timestamp = world.get_snapshot().timestamp.elapsed_seconds
         while True:
             if args.asynch or not synchronous_master:
                 world.wait_for_tick()
             else:
                 world.tick()
+            timestamp = world.get_snapshot().timestamp.elapsed_seconds
 
             #Manage walkers
             active_actors=[]
             for i in range(number_of_walkers):
                 loc_walker = all_actors[i*2].get_location()
-                target = routes[i][current_target[i]]["pos"].location
+                target = routes[i][current_target[i]]["pos"].location if tmp_target[i].z==0 else tmp_target[i]
+
+                if timestamp-prev_timestamp>1 and (active_walkers[i] or TEST_ROUTES) and np.random.rand()<args.random_prob:
+                    tmp_target[i].z=1
+                    if current_target[i]>0:
+                        tmp_target[i].x = np.random.rand()*(routes[i][current_target[i]]["pos"].location.x-routes[i][current_target[i]-1]["pos"].location.x)\
+                                            +routes[i][current_target[i]-1]["pos"].location.x
+                        tmp_target[i].y = np.random.rand()*(routes[i][current_target[i]]["pos"].location.y-routes[i][current_target[i]-1]["pos"].location.y)\
+                                            +routes[i][current_target[i]-1]["pos"].location.y
+                    else:
+                        tmp_target[i].x = np.random.rand()*(routes[i][1]["pos"].location.x-routes[i][0]["pos"].location.x)+routes[i][0]["pos"].location.x
+                        tmp_target[i].y = np.random.rand()*(routes[i][1]["pos"].location.y-routes[i][0]["pos"].location.y)+routes[i][0]["pos"].location.y
+                    # Add gaussian noise to x and y
+                    tmp_target[i].x += np.random.normal(0, 1.5)
+                    tmp_target[i].y += np.random.normal(0, 1.5)
+                    speed = np.clip(abs(float(walker_speed[i])+np.random.normal(0, 1.0)),1.0,2.0)
+                    all_actors[i*2].set_max_speed(speed)
+                    if evaluator is not None:
+                        evaluator.pedestrian_traj_eval(all_actors[i*2+1].id,loc_walker)
+                        evaluator.init_pedestrian_traj(all_actors[i*2+1].id,loc_walker,speed)
+                    target = tmp_target[i]
                 if active_walkers[i]:
                     if(not all_actors[i*2+1].is_alive):
                         active_walkers[i]=False
@@ -277,14 +307,17 @@ def main():
                     distance = math.sqrt((loc_walker.x-target.x)**2+(loc_walker.y-target.y)**2)
                     if distance<1.5:
                         current_target[i]+=1
+                        if tmp_target[i].z>0: tmp_target[i].z = 0
                         if current_target[i]==len(routes[i]):current_target[i]=0
+                        if evaluator is not None: evaluator.pedestrian_traj_eval(all_actors[i*2+1].id,loc_walker)
                         if routes[i][current_target[i]]["stop"]:
                             all_actors[i*2].set_max_speed(0)
                             all_actors[i*2+1].set_bones(inactive_bones[i])
                             all_actors[i*2+1].show_pose()
                             active_walkers[i]=False
-                            if evaluator is not None: evaluator.pedestrian_traj_eval(all_actors[i*2+1].id,loc_walker)
                         else:
+                            if evaluator is not None: evaluator.init_pedestrian_traj(all_actors[i*2+1].id,loc_walker,float(walker_speed[i]))
+                            all_actors[i*2].set_max_speed(float(walker_speed[i]))
                             all_actors[i*2].go_to_location(routes[i][current_target[i]]["pos"].location)
                 else:
                     if TEST_ROUTES:
@@ -309,7 +342,7 @@ def main():
                             if evaluator is not None: 
                                 evaluator.init_pedestrian_traj(all_actors[i*2+1].id,loc_walker,float(walker_speed[i]))
                                 evaluator.init_robot_traj(all_actors[i*2+1].id,loc_walker,routes[i][current_target[i]]["pos"].location)
-            
+            if timestamp-prev_timestamp>1:prev_timestamp=timestamp
             #Manage apparitions
             if not TEST_ROUTES:
                 for i in range(number_of_apparitions):

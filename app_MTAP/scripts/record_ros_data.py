@@ -33,7 +33,7 @@ from carla import ColorConverter as cc
 
 import argparse
 import math
-from utils import *
+from utils_carla import *
 from config import *
 from fnmatch import fnmatch
 import json

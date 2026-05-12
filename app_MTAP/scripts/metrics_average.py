@@ -24,17 +24,34 @@ def calculate_folder_average(folder_path, prefix):
             route_length = data["route_lenght"]*data["route_completion"]
             total_length+=route_length
 
+            remove_keys=[]
             for key in sum_values.keys():
-                value = data[key]
-                sum_values[key] += value
+                try:
+                    value = data[key]
+                    sum_values[key] += value
+                except KeyError:
+                    remove_keys.append(key)
+                    
+            for key in remove_keys: del sum_values[key]
 
+            remove_keys=[]
             for key in sum_per_kilometer_values.keys():
-                value = data[key]
-                sum_per_kilometer_values[key] += value
-
+                try:
+                    value = data[key]
+                    sum_per_kilometer_values[key] += value
+                except KeyError:
+                    remove_keys.append(key)
+                
+            for key in remove_keys: del sum_per_kilometer_values[key]
+            remove_keys=[]
             for key in sum_weighted_values.keys():
-                value = data[key]
-                sum_weighted_values[key] += value*route_length
+                try:
+                    value = data[key]
+                    sum_weighted_values[key] += value*route_length
+                except KeyError:
+                    remove_keys.append(key)
+
+            for key in remove_keys: del sum_weighted_values[key]
 
             
     print("Total lenght ",total_length)
@@ -56,7 +73,7 @@ if len(sys.argv) != 2:
     sys.exit(1)
 
 # Parse command-line arguments
-folder, prefix = sys.argv[1].split("/")
+folder, prefix = sys.argv[1].rsplit("/", 1)
 
 # Calculate and display the average
 average_result = calculate_folder_average(folder, prefix)
