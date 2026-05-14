@@ -28,8 +28,8 @@ This repository presents the code of our work [Zero-Shot Transfer of Force Map E
 	https://drive.google.com/drive/folders/1ne4Psy9-H-rKTsbeVl46RH5aDO3z7tBN?usp=sharing
 
 5. **Move the weights to the proper folder**:
-	Put the "checkpoint-epoch=34.ckpt" file in the ./unit/weights/vq_gan_mid folder.
-	Put the "unet_force_diff.pt" and/or "unet_force_rgb_nomark.pt" in the ./force/weights folder.
+	- Put the "checkpoint-epoch=34.ckpt" file in the ./unit/weights/vq_gan_mid folder.
+	- Put the "unet_force_diff.pt" and/or "unet_force_rgb_nomark.pt" in the ./force/weights folder.
 
 ## Usage
 
