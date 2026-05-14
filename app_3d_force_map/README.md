@@ -33,7 +33,7 @@ This repository presents the code of our work [Zero-Shot Transfer of Force Map E
 
 ## Usage
 
-1. **Connect your GelSight Mini sensor and run the following commands**:
+1. **Connect your GelSight Mini sensor and run the following command**:
 
     `python force_estimation_live.py`
 
