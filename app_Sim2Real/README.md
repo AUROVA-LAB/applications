@@ -164,7 +164,7 @@ python agent.py --model_path PATH/TO/MODEL
 
 In other terminal, run the CARLA Docker image sharing the necesary folders:
 ```
-docker run --rm --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it --net=host --privileged -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw -v /dev:/dev -v PATH/TO/applications/app_Sim2Real/:/app_Sim2Real -v PATH/TO/aurova_preprocessed/reconstruction_3dgs_mesh/:/workspace -v PATH/TO/3DGS/DATASET/:/workspace/data --cpuset-cpus 0-3 --name aurova_carla_octreeGS aurova_carla:octree_gs
+docker run --rm --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it --net=host --privileged -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix:rw -v /dev:/dev -v PATH/TO/applications/app_Sim2Real/:/app_Sim2Real -v PATH/TO/aurova_reconstruction/hybrid_3dgs_mesh/:/workspace -v PATH/TO/3DGS/DATASET/:/workspace/data --cpuset-cpus 0-3 --name aurova_carla_octreeGS aurova_carla:octree_gs
 
 cd /app_Sim2Real/scripts
 ./evaluation_execution.sh
