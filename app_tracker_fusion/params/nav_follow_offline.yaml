@@ -62,6 +62,7 @@ tracker_filter: {
   rate: 10,
   bounding_box_percet_reduction: 0.6,
   max_traslation_distance: 1.0,
+  theta_w: 5.0,
   filter_radious: 0.8,
   search_time: 5.0,
   x_model: 1.0,
