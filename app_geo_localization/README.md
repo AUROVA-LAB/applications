@@ -38,10 +38,51 @@ Citations:
 ### Requirements to use application:
 These repository has migrated to ROS 2, the version of ROS 1 is in the main branch.
 - System requirements: Ubuntu 24.04 and ROS Jazzy. 
-- External libraries: [ceres-solver-2.0.0](http://ceres-solver.org/installation.html) (IMPORTANT!! [download](https://drive.google.com/file/d/1acZtn_jaHfj2BVgwaDnQH2Lz-7022F1-/view?usp=share_link) version 2.0.0). Eigen and PCL are usually installed join with ROS.
+- External libraries: [ceres-solver-2.0.0](http://ceres-solver.org/installation.html) (IMPORTANT!!version 2.0.0). Eigen and PCL are usually installed join with ROS.
+```
+cd INSTALLATION/PATH/LIBRARIES
+git clone https://ceres-solver.googlesource.com/ceres-solver --branch 2.0.0
+sudo apt update
+sudo apt-get install cmake libgoogle-glog-dev libgflags-dev libatlas-base-dev libeigen3-dev
+mkdir ceres-bin
+cd ceres-bin
+cmake ../ceres-solver
+make -j7
+sudo make install
+```
 - Local libraries: [lib_localization](https://github.com/AUROVA-LAB/lib_localization) and [lib_planning](https://github.com/AUROVA-LAB/lib_planning).
-- External ROS packages: "sudo apt-get install ros-jazzy-ackermann-\*", "sudo apt-get jazzy ros-noetic-robot-state-\*".
+```
+cd INSTALLATION/PATH/LIBRARIES
+git clone https://github.com/AUROVA-LAB/lib_localization
+cd lib_localization/
+mkdir build
+cd build
+cmake .. 
+make
+sudo make install
+cd ../../
+
+git clone https://github.com/AUROVA-LAB/lib_planning
+cd lib_planning/
+mkdir build
+cd build
+cmake .. 
+make
+sudo make install
+```
+- External ROS packages: "sudo apt-get install ros-jazzy-ackermann-\* ros-jazzy-robot-state-\* ros-jazzy-xacro".
 - Local ROS packages (checkout the ros2 branch): [robot_blue](https://github.com/AUROVA-LAB/robot_blue), [aurova_preprocessed](https://github.com/AUROVA-LAB/aurova_preprocessed), [aurova_odom](https://github.com/AUROVA-LAB/aurova_odom), [aurova_detections](https://github.com/AUROVA-LAB/aurova_detections), and [aurova_localization](https://github.com/AUROVA-LAB/aurova_localization).
+```
+cd PATH/TO/aurova_ws/src
+git clone https://github.com/AUROVA-LAB/robot_blue --branch ros2
+git clone https://github.com/AUROVA-LAB/aurova_preprocessed --branch ros2
+git clone https://github.com/AUROVA-LAB/aurova_odom --branch ros2
+git clone https://github.com/AUROVA-LAB/aurova_detections --branch ros2
+git clone https://github.com/AUROVA-LAB/aurova_localization --branch ros2
+
+cd ..
+colcon build --symlink-install --packages-up-to app_geo_localization
+```
 
 ### Docker usage
 In "applications" there is a Dockerfile for installation in others OS. Download the local packages (checkout the ros2 branch), and build the docker image:
