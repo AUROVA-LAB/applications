@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
-<package format="2">
+<?xml-model
+   href="http://download.ros.org/schema/package_format3.xsd"
+   schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>applications</name>
   <version>0.0.0</version>
   <description>The applications  metapackage</description>
@@ -30,17 +33,16 @@
 
   <!-- The *depend tags are used to specify dependencies -->
   <!-- Dependencies can be catkin packages or system dependencies -->
-  <exec_depend>app_old</exec_depend>
+  <!-- <exec_depend>app_old</exec_depend>
   <exec_depend>app_tracker_fusion</exec_depend>
-  <exec_depend>app_MTAP</exec_depend>
+  <exec_depend>app_MTAP</exec_depend> -->
   <exec_depend>app_geo_localization</exec_depend>
     
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
-    <metapackage/>
   </export>
 </package>
