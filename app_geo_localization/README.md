@@ -38,7 +38,7 @@ Citations:
 ### Requirements to use application:
 These repository has migrated to ROS 2, the version of ROS 1 is in the main branch.
 - System requirements: Ubuntu 24.04 and ROS Jazzy. 
-- External libraries: [ceres-solver-2.0.0](http://ceres-solver.org/installation.html) (IMPORTANT!!version 2.0.0). Eigen and PCL are usually installed join with ROS.
+- External libraries: [ceres-solver-2.0.0](http://ceres-solver.org/installation.html) (IMPORTANT!! version 2.0.0). Eigen and PCL are usually installed join with ROS.
 ```
 cd INSTALLATION/PATH/LIBRARIES
 git clone https://ceres-solver.googlesource.com/ceres-solver --branch 2.0.0
@@ -70,7 +70,10 @@ cmake ..
 make
 sudo make install
 ```
-- External ROS packages: "sudo apt-get install ros-jazzy-ackermann-\* ros-jazzy-robot-state-\* ros-jazzy-xacro".
+- External ROS packages: 
+```
+sudo apt-get install ros-jazzy-ackermann-\* ros-jazzy-robot-state-\* ros-jazzy-xacro 
+```
 - Local ROS packages (checkout the ros2 branch): [robot_blue](https://github.com/AUROVA-LAB/robot_blue), [aurova_preprocessed](https://github.com/AUROVA-LAB/aurova_preprocessed), [aurova_odom](https://github.com/AUROVA-LAB/aurova_odom), [aurova_detections](https://github.com/AUROVA-LAB/aurova_detections), and [aurova_localization](https://github.com/AUROVA-LAB/aurova_localization).
 ```
 cd PATH/TO/aurova_ws/src
@@ -81,11 +84,16 @@ git clone https://github.com/AUROVA-LAB/aurova_detections --branch ros2
 git clone https://github.com/AUROVA-LAB/aurova_localization --branch ros2
 
 cd ..
-colcon build --symlink-install --packages-up-to app_geo_localization
+colcon build --symlink-install --packages-up-to app_geo_localization --cmake-args -DCMAKE_BUILD_TYPE=Release
+```
+- Ground boundaries detection (whole localization pipeline)
+```
+cd PATH/TO/aurova_ws/src/aurova_detections/yolinov2_ros
+docker build -t yolinov2:jazzy .
 ```
 
 ### Docker usage
-In "applications" there is a Dockerfile for installation in others OS. Download the local packages (checkout the ros2 branch), and build the docker image:
+In `applications` there is a Dockerfile for installation in other OS. Download the local packages (checkout the ros2 branch), and build the docker image:
 ```
   cd /PATH/TO/aurova_ws/applications
   docker build -t ros2-jazzy .
@@ -104,22 +112,28 @@ docker exec -it ros2-jazzy /ros_entrypoint.sh "/bin/bash"
 ### Steps to use application (offline mode via rosbag):
 
 - [Download](https://drive.google.com/file/d/1oW7MLIJhvlNtgJsetXNRY-BQxufgPUoJ/view?usp=sharing) bag file for this example.
-- Modify "launch/nav_GeoLoc_offline.xml" to provide correct link in "bag_file_1" argument.
-- Modify "params/nav_GeoLoc_offline.yaml" to provide correct link in "url_to_map" variable.
+- Modify `launch/nav_GeoLoc_offline.xml` to provide correct link in `bag_file_1` argument.
+- Modify `params/nav_GeoLoc_offline.yaml` to provide correct link in `url_to_map` variable.
 - Run next command for localization (Odometry + GPS):
 
 ```shell
 ros2 launch app_geo_localization nav_GeoLoc_offline.xml
 ```
-- Follow the instructions [here](https://github.com/AUROVA-LAB/aurova_detections/tree/main/yolinov2_ros) (in the example section and in ros2 branch) to run the docker for ground boundaries detection (whole localization pipeline).
+- Run the docker for ground boundaries detection (whole localization pipeline).
+```
+docker run --rm --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it --net=host --privileged --name yolinov2 yolinov2:jazzy
+```
 
 ### Steps to use application (online mode via BLUE robot) **Not migrated yet**:
 
-- Modify "params/nav_GeoLoc_online.yaml" to provide correct link in "url_to_map" variable.
+- Modify `params/nav_GeoLoc_online.yaml` to provide correct link in `url_to_map` variable.
 - Run next command for localization:
 
 ```shell
 ros2 launch app_geo_localization nav_GeoLoc_online.launch
 ```
-- Follow the instructions [here](https://github.com/AUROVA-LAB/aurova_detections/tree/main/yolinov2_ros) (in the example section) to run the docker for ground boundaries detection (whole localization pipeline).
+- Run the docker for ground boundaries detection (whole localization pipeline).
+```
+docker run --rm --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it --net=host --privileged --name yolinov2 yolinov2:jazzy
+```
 - Drive!!
