@@ -2,7 +2,6 @@
 
   <!-- rosbags list -->
   <arg name="bag_file_1" default="/home/alolivas/aurova-lab/labrobotica/dataset/rosbag/ros2/2023-06-13-08-44-15"/>
-  <arg name="silence" default="--ros-args --disable-stdout-logs"/>
 
   <!-- select your robot -->
   <include file="$(find-pkg-share robot_blue)/launch/components/start_tf.launch.xml" />
@@ -22,7 +21,7 @@
     <param from="$(find-pkg-share app_geo_localization)/params/nav_GeoLoc_offline.yaml"/>
   </node>
 
-  <node pkg="odom_estimation_pc" exec="odom_estimation_node" name="odom_estimation_pc" output="screen">
+  <node pkg="odom_estimation_pc" exec="odom_estimation_node" name="odom_estimation_pc" output="log" args="--ros-args --disable-stdout-logs">
     <param from="$(find-pkg-share app_geo_localization)/params/nav_GeoLoc_offline.yaml"/>
   </node>
 
