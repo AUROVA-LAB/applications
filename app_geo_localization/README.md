@@ -84,7 +84,7 @@ git clone https://github.com/AUROVA-LAB/aurova_detections --branch ros2
 git clone https://github.com/AUROVA-LAB/aurova_localization --branch ros2
 
 cd ..
-colcon build --symlink-install --packages-up-to app_geo_localization --cmake-args -DCMAKE_BUILD_TYPE=Release
+colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-up-to app_geo_localization 
 ```
 - Ground boundaries detection (whole localization pipeline)
 ```
@@ -121,7 +121,7 @@ ros2 launch app_geo_localization nav_GeoLoc_offline.xml
 ```
 - Run the docker for ground boundaries detection (whole localization pipeline).
 ```
-docker run --rm --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it --net=host --privileged --name yolinov2 yolinov2:jazzy
+docker run --rm --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it --privileged --name yolinov2 yolinov2:jazzy
 ```
 
 ### Steps to use application (online mode via BLUE robot) **Not migrated yet**:
@@ -134,6 +134,6 @@ ros2 launch app_geo_localization nav_GeoLoc_online.launch
 ```
 - Run the docker for ground boundaries detection (whole localization pipeline).
 ```
-docker run --rm --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it --net=host --privileged --name yolinov2 yolinov2:jazzy
+docker run --rm --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it --privileged --name yolinov2 yolinov2:jazzy
 ```
 - Drive!!
