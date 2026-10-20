@@ -138,7 +138,12 @@ python train.py --id EXPERIMENT_NAME --save_k 3 --num_workers 12 --batch_size 8 
 
 ## Usage
 ### Real robot
-For using the end-to-end neural network in our UGV, BLUE, write the path of the trained model in `aurova_planning/Sim2Real_local_planner/agent_ros.launch` and run the Docker image of [Sim2Real_local_planner](https://github.com/AUROVA-LAB/aurova_planning/tree/master/Sim2Real_local_planner) for ROS. In other terminal, launch the rest of the nodes:
+For using the end-to-end neural network in our UGV, BLUE, and run the Docker image of [Sim2Real_local_planner](https://github.com/AUROVA-LAB/aurova_planning/tree/master/Sim2Real_local_planner) for ROS passing the trained model. 
+``` 
+docker run --rm --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 -it --net=host --privileged -v /PATH/TO/TRAINED/MODEL:/catkin_ws/src/Sim2Real/model.pth --name sim2real aurova_sim2real:ros
+```
+
+In other terminal, launch the rest of the nodes:
 
 ```
 roslaunch Sim2Real_local_planner nav_network_GeoLoc_online.launch
