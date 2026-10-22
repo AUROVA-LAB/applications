@@ -118,7 +118,7 @@ docker exec -it ros2-jazzy /ros_entrypoint.sh "/bin/bash"
 - Run next command for localization (Odometry + GPS) + NVP:
 
 ```shell
-roslaunch app_geo_navigation nav_NVP_GeoLoc_offline.launch
+ros2 launch app_geo_navigation nav_NVP_GeoLoc_offline.xml
 ```
 - Run the docker for ground boundaries detection (whole localization pipeline).
 ```
@@ -133,7 +133,7 @@ docker run --rm --gpus all --ipc=host --ulimit memlock=-1 --ulimit stack=6710886
 - Run next command for localization (Odometry + GPS) + NVP:
 
 ```shell
-roslaunch app_geo_navigation nav_NVP_GeoLoc_online.launch
+ros2 launch app_geo_navigation nav_NVP_GeoLoc_online.xml
 ```
 - Run the docker for ground boundaries detection (whole localization pipeline).
 ```
