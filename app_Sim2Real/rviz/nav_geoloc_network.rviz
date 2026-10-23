@@ -5,18 +5,18 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /LiDAR1/Topic1
         - /Localization1/Shape1
         - /LocalizationSim1/Shape1
         - /Odometry1/Shape1
         - /GT1/Shape1
       Splitter Ratio: 0.5359116196632385
-    Tree Height: 224
+    Tree Height: 271
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
     Expanded:
       - /2D Pose Estimate1
-      - /2D Nav Goal1
       - /Publish Point1
     Name: Tool Properties
     Splitter Ratio: 0.5886790156364441
@@ -27,13 +27,10 @@ Panels:
     Name: Views
     Splitter Ratio: 0.5
   - Class: rviz_common/Time
+    Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: Image
-Preferences:
-  PromptSaveOnExit: true
-Toolbars:
-  toolButtonStyle: 2
+    SyncSource: LiDAR
 Visualization Manager:
   Class: ""
   Displays:
@@ -62,7 +59,6 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-      Marker Alpha: 1
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -75,6 +71,14 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz_default_plugins/RobotModel
       Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robot_description
       Enabled: true
       Links:
         All Links Enabled: true
@@ -82,19 +86,83 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        blue:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        eje_delantero:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        eje_trasero:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        gps:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        os_sensor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        os_sensor_visual:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rueda_derecha:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rueda_derecha_disco:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rueda_izquierda:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rueda_izquierda_disco:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        rueda_trasera:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Mass Properties:
+        Inertia: false
+        Mass: false
       Name: RobotModel
-      Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
       Value: true
       Visual Enabled: true
     - Class: rviz_default_plugins/MarkerArray
       Enabled: true
-      Marker Topic: /map
       Name: Map
       Namespaces:
-        {}
-      Queue Size: 10000
+        nodes: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map
       Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
@@ -111,16 +179,21 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
+      Max Intensity: 4096
       Min Color: 0; 0; 0
+      Min Intensity: 0
       Name: LiDAR
       Position Transformer: XYZ
-      Queue Size: 10
       Selectable: true
       Size (Pixels): 1
       Size (m): 0.009999999776482582
       Style: Points
-      Topic: /ouster/points
-      Unreliable: false
+      Topic:
+        Depth: 15
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /ouster/points
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -139,16 +212,21 @@ Visualization Manager:
       Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
+      Max Intensity: 4096
       Min Color: 0; 0; 0
+      Min Intensity: 0
       Name: DetectionsRaw
       Position Transformer: XYZ
-      Queue Size: 10
       Selectable: true
       Size (Pixels): 10
       Size (m): 0.009999999776482582
       Style: Points
-      Topic: /ground_lines_pc
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /ground_lines_pc
       Use Fixed Frame: true
       Use rainbow: true
       Value: false
@@ -167,16 +245,21 @@ Visualization Manager:
       Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
+      Max Intensity: 4096
       Min Color: 0; 0; 0
+      Min Intensity: 0
       Name: Detections
       Position Transformer: XYZ
-      Queue Size: 10
       Selectable: true
       Size (Pixels): 10
       Size (m): 0.5
       Style: Spheres
-      Topic: /detections
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /detections
       Use Fixed Frame: true
       Use rainbow: true
       Value: false
@@ -195,16 +278,21 @@ Visualization Manager:
       Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
+      Max Intensity: 4096
       Min Color: 0; 0; 0
+      Min Intensity: 0
       Name: Landmarks
       Position Transformer: XYZ
-      Queue Size: 10
       Selectable: true
       Size (Pixels): 10
       Size (m): 0.009999999776482582
       Style: Points
-      Topic: /landmarks
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /landmarks
       Use Fixed Frame: true
       Use rainbow: true
       Value: false
@@ -223,16 +311,21 @@ Visualization Manager:
       Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
+      Max Intensity: 4096
       Min Color: 0; 0; 0
+      Min Intensity: 0
       Name: Association
       Position Transformer: XYZ
-      Queue Size: 10
       Selectable: true
       Size (Pixels): 10
       Size (m): 0.75
       Style: Spheres
-      Topic: /corregistered
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /corregistered
       Use Fixed Frame: true
       Use rainbow: true
       Value: false
@@ -253,11 +346,10 @@ Visualization Manager:
           Scale: 1
           Value: false
         Value: true
-      Enabled: false
+      Enabled: true
       Keep: 10000
       Name: OdometryGps
       Position Tolerance: 0.10000000149011612
-      Queue Size: 10
       Shape:
         Alpha: 1
         Axes Length: 1
@@ -268,9 +360,14 @@ Visualization Manager:
         Shaft Length: 0.10000000149011612
         Shaft Radius: 0.20000000298023224
         Value: Arrow
-      Topic: /odometry_gps
-      Unreliable: false
-      Value: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /odometry_gps
+      Value: true
     - Angle Tolerance: 0.10000000149011612
       Class: rviz_default_plugins/Odometry
       Covariance:
@@ -292,7 +389,6 @@ Visualization Manager:
       Keep: 100000
       Name: OdometryGpsCorr
       Position Tolerance: 0.10000000149011612
-      Queue Size: 10
       Shape:
         Alpha: 1
         Axes Length: 1
@@ -303,8 +399,13 @@ Visualization Manager:
         Shaft Length: 0.10000000149011612
         Shaft Radius: 0.20000000298023224
         Value: Arrow
-      Topic: /odometry_gps_corrected
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /odometry_gps_corrected
       Value: false
     - Angle Tolerance: 0.10000000149011612
       Class: rviz_default_plugins/Odometry
@@ -323,11 +424,10 @@ Visualization Manager:
           Scale: 1
           Value: true
         Value: false
-      Enabled: false
+      Enabled: true
       Keep: 10000
       Name: Localization
       Position Tolerance: 0.10000000149011612
-      Queue Size: 10
       Shape:
         Alpha: 1
         Axes Length: 1
@@ -338,16 +438,27 @@ Visualization Manager:
         Shaft Length: 0.20000000298023224
         Shaft Radius: 0.20000000298023224
         Value: Arrow
-      Topic: /localization
-      Unreliable: false
-      Value: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /localization
+      Value: true
     - Class: rviz_default_plugins/MarkerArray
       Enabled: true
-      Marker Topic: /visualization
       Name: Paths
       Namespaces:
-        {}
-      Queue Size: 1
+        links: true
+        nodes: true
+        text: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /visualization
       Value: true
     - Alpha: 1
       Axes Length: 1
@@ -373,12 +484,16 @@ Visualization Manager:
       Head Length: 0.30000001192092896
       Head Radius: 0.10000000149011612
       Name: LocalGoal
-      Queue Size: 10
       Shaft Length: 1
       Shaft Radius: 0.05000000074505806
       Shape: Axes
-      Topic: /semilocal_goal
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /semilocal_goal
       Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
@@ -395,16 +510,21 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
+      Max Intensity: 4096
       Min Color: 0; 0; 0
+      Min Intensity: 0
       Name: LocalPath
       Position Transformer: XYZ
-      Queue Size: 10
       Selectable: true
       Size (Pixels): 3
       Size (m): 0.5
       Style: Spheres
-      Topic: /local_goal
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /local_goal
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -423,16 +543,21 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
+      Max Intensity: 4096
       Min Color: 0; 0; 0
+      Min Intensity: 0
       Name: Limits
       Position Transformer: XYZ
-      Queue Size: 10
       Selectable: true
       Size (Pixels): 3
       Size (m): 0.009999999776482582
       Style: Points
-      Topic: /ground_limits
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /ground_limits
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
@@ -451,42 +576,51 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
+      Max Intensity: 4096
       Min Color: 0; 0; 0
+      Min Intensity: 0
       Name: Obstacles
       Position Transformer: XYZ
-      Queue Size: 10
       Selectable: true
       Size (Pixels): 3
       Size (m): 0.009999999776482582
       Style: Points
-      Topic: /ground_obstacles
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /ground_obstacles
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
     - Class: rviz_default_plugins/Image
       Enabled: true
-      Image Topic: /camera/color/image_raw
       Max Value: 1
       Median window: 5
       Min Value: 0
       Name: Image
       Normalize Range: true
-      Queue Size: 2
-      Transport Hint: raw
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /camera/color/image_raw
       Value: true
     - Class: rviz_default_plugins/Image
       Enabled: true
-      Image Topic: /ouster/range_image
       Max Value: 1
       Median window: 5
       Min Value: 0
       Name: Image
       Normalize Range: true
-      Queue Size: 2
-      Transport Hint: raw
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /ouster/range_image
       Value: true
     - Angle Tolerance: 0.10000000149011612
       Class: rviz_default_plugins/Odometry
@@ -509,7 +643,6 @@ Visualization Manager:
       Keep: 10000
       Name: LocalizationSim
       Position Tolerance: 0.10000000149011612
-      Queue Size: 10
       Shape:
         Alpha: 1
         Axes Length: 1
@@ -520,8 +653,13 @@ Visualization Manager:
         Shaft Length: 0.20000000298023224
         Shaft Radius: 0.20000000298023224
         Value: Arrow
-      Topic: /localization_sim
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /localization_sim
       Value: true
     - Angle Tolerance: 0.10000000149011612
       Class: rviz_default_plugins/Odometry
@@ -544,7 +682,6 @@ Visualization Manager:
       Keep: 10000
       Name: Odometry
       Position Tolerance: 0.10000000149011612
-      Queue Size: 10
       Shape:
         Alpha: 1
         Axes Length: 1
@@ -555,8 +692,13 @@ Visualization Manager:
         Shaft Length: 0.20000000298023224
         Shaft Radius: 0.20000000298023224
         Value: Arrow
-      Topic: /odom
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /odom
       Value: false
     - Angle Tolerance: 0.10000000149011612
       Class: rviz_default_plugins/Odometry
@@ -579,7 +721,6 @@ Visualization Manager:
       Keep: 10000
       Name: GT
       Position Tolerance: 0.10000000149011612
-      Queue Size: 10
       Shape:
         Alpha: 1
         Axes Length: 1
@@ -590,21 +731,29 @@ Visualization Manager:
         Shaft Length: 0.20000000298023224
         Shaft Radius: 0.20000000298023224
         Value: Arrow
-      Topic: /ground_truth
-      Unreliable: false
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /ground_truth
       Value: true
     - Class: rviz_default_plugins/MarkerArray
       Enabled: true
-      Marker Topic: /agent_ros/visualization
       Name: MarkerArray
       Namespaces:
         {}
-      Queue Size: 100
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: visualization_marker_array
       Value: true
   Enabled: true
   Global Options:
     Background Color: 255; 255; 255
-    Default Light: true
     Fixed Frame: map
     Frame Rate: 30
   Name: root
@@ -614,27 +763,45 @@ Visualization Manager:
     - Class: rviz_default_plugins/MoveCamera
     - Class: rviz_default_plugins/Select
     - Class: rviz_default_plugins/Measure
+      Line color: 128; 128; 0
     - Class: rviz_default_plugins/SetInitialPose
-      Theta std deviation: 0.2617993950843811
-      Topic: /initialpose
-      X std deviation: 0.5
-      Y std deviation: 0.5
+      Covariance x: 0.25
+      Covariance y: 0.25
+      Covariance yaw: 0.06853891909122467
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /initialpose
     - Class: rviz_default_plugins/SetGoal
-      Topic: /move_base_simple/goal
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /move_base_simple/goal
     - Class: rviz_default_plugins/PublishPoint
       Single click: true
-      Topic: /clicked_point
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /clicked_point
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
   Value: true
   Views:
     Current:
-      Class: rviz_default_plugins_default_plugins/Orbit
-      Distance: 16.91570281982422
+      Class: rviz_default_plugins/Orbit
+      Distance: 45.60315704345703
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
-      Field of View: 0.7853981852531433
       Focal Point:
         X: 1.918188214302063
         Y: -1.1933465003967285
@@ -644,19 +811,20 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7447971105575562
+      Pitch: 0.814797043800354
       Target Frame: base_link
-      Yaw: 4.420412063598633
+      Value: Orbit (rviz_default_plugins)
+      Yaw: 3.6054112911224365
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 1016
+  Height: 1043
   Hide Left Dock: false
   Hide Right Dock: true
   Image:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000019c00000275fc0200000009fb000000100044006900730070006c00610079007301000001200000011d000000c900fffffffb0000001200530065006c0065006300740069006f006e01000002430000005c0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000a0049006d00610067006501000002a5000000f00000001600ffffff00000001000001110000034bfc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002e0000034b000000a400fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000738000000ddfc0100000002fb0000000a0049006d0061006700650100000000000007380000007600fffffffb0000000a00560069006500770073030000004e00000080000002e100000197000000030000073800000040fc0100000002fb0000000800540069006d0065010000000000000738000003bc00fffffffb0000000800540069006d00650100000000000004500000000000000000000005960000027500000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000019c000002eafc0200000009fb000000100044006900730070006c00610079007301000000c80000014a000000c700fffffffb0000001200530065006c0065006300740069006f006e0100000218000000980000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000a0049006d00610067006501000002b6000000fc0000001600ffffff00000001000001110000034bfc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000002e0000034b000000a000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b20000000000000000000000020000078000000087fc0100000002fb0000000a0049006d0061006700650100000000000007800000005a00fffffffb0000000a00560069006500770073030000004e00000080000002e100000197000000030000078000000040fc0100000002fb0000000800540069006d00650100000000000007800000025300fffffffb0000000800540069006d00650100000000000004500000000000000000000005de000002ea00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -665,6 +833,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: true
-  Width: 1848
-  X: 72
-  Y: 27
+  Width: 1920
+  X: 1920
+  Y: 0

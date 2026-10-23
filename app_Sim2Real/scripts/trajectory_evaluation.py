@@ -138,7 +138,7 @@ def main():
     parser.add_argument('--test_file', type=str, required=True, help='Test rosbag ot txt path')
     parser.add_argument('--odom_topic', type=str, default='/localization', help='Odometry topic name')
     parser.add_argument('--status_topic', type=str, default='/CLEAR_status', help='Status topic name to read when operator takes the control.')
-    parser.add_argument('--output_name', type=str, default='results/test_route2_dtw', help='Name of the output file')
+    parser.add_argument('--output_name', type=str, default='results/test_route1_dtw', help='Name of the output file')
     args = parser.parse_args()
 
     # Extract trajectories

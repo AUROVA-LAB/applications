@@ -61,7 +61,6 @@
   <depend>aurova_preprocessed</depend>
   <depend>aurova_detections</depend>
 
-  <buildtool_depend>ament_cmake</buildtool_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

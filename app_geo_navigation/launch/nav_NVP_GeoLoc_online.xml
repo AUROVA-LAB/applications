@@ -4,9 +4,8 @@
   <include file="$(find-pkg-share robot_blue)/launch/start_nav_nodes.launch.xml" />
   
   <!-- Fusion-based localization by optimization process -->
-    <node name="geo_localization" pkg ="geo_localization" exec="geo_localization" output="screen">
+  <node name="geo_localization" pkg ="geo_localization" exec="geo_localization" output="screen">
     <param from="$(find-pkg-share app_geo_navigation)/params/nav_NVP_GeoLoc_online.yaml" />
-    <remap from="localization" to="localization_sim"/>
   </node>
 
 

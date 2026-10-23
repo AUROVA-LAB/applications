@@ -1,0 +1,43 @@
+<launch>
+
+  <!-- start  -->
+  <include file="$(find-pkg-share robot_blue)/launch/start_nav_nodes.launch" />
+  
+  <!-- Fusion-based localization by optimization process -->
+  <node name="geo_localization" pkg ="geo_localization" exec="geo_localization" output="screen">
+    <param from="$(find-pkg-share app_sim2real)/params/nav_network_GeoLoc_online.yaml" />
+  </node>
+
+  <!-- GPS observations in odometry format -->
+  <node pkg="gps_to_odom" exec="gps_to_odom" name="gps_to_odom" output="log">
+    <param from="$(find-pkg-share app_sim2real)/params/nav_network_GeoLoc_online.yaml" />
+  </node>
+  
+  <!-- lidar odometry -->
+  <node pkg="pc2image" exec="pc2image" name="pc2image">
+    <param from="$(find-pkg-share app_sim2real)/params/nav_network_GeoLoc_online.yaml"/>
+  </node>
+
+  <node pkg="odom_estimation_pc" exec="odom_estimation_node" name="odom_estimation_pc" output="log" args="--ros-args --disable-stdout-logs">
+    <param from="$(find-pkg-share app_sim2real)/params/nav_network_GeoLoc_online.yaml"/>
+  </node> 
+
+  <!-- Nodes to ground lines detection -->
+  <node pkg="merged_channels_ouster" name="merge_channels" exec="merge_channels_ouster">
+    <param from="$(find-pkg-share app_sim2real)/params/nav_network_GeoLoc_online.yaml" />
+  </node>
+  <node pkg="image2pcl"   exec="image2pcl_node" name="image2pcl" output="screen">
+    <param from="$(find-pkg-share app_sim2real)/params/nav_network_GeoLoc_online.yaml" />
+  </node>
+
+  <!-- LPP, GPP, and utm -> map transformation -->
+  <node name="global_planning" pkg="global_planning" exec="global_planning" output="screen" >
+    <param from="$(find-pkg-share app_sim2real)/params/nav_network_GeoLoc_online.yaml" />
+    <remap from="pose_plot" to="localization" />
+  </node>
+
+  <node exec="rviz2" name="rviz2" pkg="rviz2" args="-d $(find-pkg-share app_sim2real)/rviz/nav_geoloc_network.rviz" >
+    <param from="$(find-pkg-share app_sim2real)/params/nav_network_GeoLoc_online.yaml" />
+  </node>
+  
+</launch>
