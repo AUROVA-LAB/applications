@@ -1,5 +1,8 @@
-import rosbag
+from rosbags.highlevel import AnyReader
+from rosbags.rosbag2 import Writer
+from rosbags.typesys import Stores, get_typestore
 import sys
+from pathlib import Path
 
 if len(sys.argv) != 5:
     print(f"Usage: python crop_rosbag.py input.bag output.bag start_time end_time")
@@ -10,12 +13,12 @@ input_bag = sys.argv[1]
 output_bag = sys.argv[2]
 start_rel = float(sys.argv[3])
 end_rel = float(sys.argv[4])
-
-with rosbag.Bag(input_bag, 'r') as bag:
+typestore = get_typestore(Stores.ROS2_JAZZY)
+with AnyReader([Path(input_bag)], default_typestore=typestore) as bag:
     first_time = None
     # Find first timestamp
-    for _, _, t in bag.read_messages():
-        first_time = t.to_sec()
+    for connection, timestamp, rawdata in bag.messages():
+        first_time = timestamp/10**9
         break
 
     if first_time is None:
@@ -23,11 +26,14 @@ with rosbag.Bag(input_bag, 'r') as bag:
         sys.exit(1)
 
     bar_length = 40
-    with rosbag.Bag(output_bag, 'w') as outbag:
-        for topic, msg, t in bag.read_messages():
-            rel_time = t.to_sec() - first_time
+    with Writer(output_bag, version=Writer.VERSION_LATEST) as outbag:
+        conn_map={}
+        for conn in bag.connections:
+            conn_map[conn.id] = outbag.add_connection(conn.topic,conn.msgtype,typestore=typestore)
+        for connection, timestamp, rawdata in bag.messages():
+            rel_time = timestamp/10**9 - first_time
             if start_rel <= rel_time <= end_rel:
-                outbag.write(topic, msg, t)
+                outbag.write(conn_map[connection.id],timestamp,rawdata)
                 progress = (rel_time - start_rel) / (end_rel - start_rel)
                 filled_length = int(bar_length * progress)
                 bar = '=' * filled_length + '-' * (bar_length - filled_length)

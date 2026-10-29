@@ -1,4 +1,5 @@
-import rosbag
+from rosbags.highlevel import AnyReader
+from rosbags.typesys import Stores, get_typestore
 import numpy as np
 from nav_msgs.msg import Odometry
 import argparse
@@ -12,6 +13,7 @@ import sys
 import tf.transformations
 import os
 from dtaidistance import dtw_ndim
+from pathlib import Path
 
 EMERGENCY_STOP=0
 REMOTE_CONTROL=1
@@ -26,7 +28,7 @@ def extract_trajectory(file_path, odom_topic, status_topic=None, min_distance=0.
     previous_mode=-1
     start_index=None
     end_index=None
-    
+    typestore = get_typestore(Stores.ROS2_JAZZY)
     if file_path.endswith('.txt'):
         with open(file_path, 'r') as f:
             lines = f.readlines()
@@ -54,10 +56,11 @@ def extract_trajectory(file_path, odom_topic, status_topic=None, min_distance=0.
                             start_index = len(poses["position"]) - 2
                         end_index = len(poses["position"]) - 1
     else:
-        with rosbag.Bag(file_path) as bag:
+        with AnyReader([Path(file_path)], default_typestore=typestore) as bag:
             # First pass to get start and end times when robot is moving
-            for topic, msg, t in bag.read_messages(topics=[odom_topic, status_topic]):
-                if topic == status_topic:
+            for connection, timestamp, rawdata in bag.messages():
+                if connection.topic == status_topic:
+                    msg = typestore.deserialize_cdr(rawdata, connection.msgtype)
                     if previous_mode==ROS_CONTROL and msg.data[0] == EMERGENCY_STOP:
                         emergency_count += 1
                     elif previous_mode==ROS_CONTROL and msg.data[0] == REMOTE_CONTROL:

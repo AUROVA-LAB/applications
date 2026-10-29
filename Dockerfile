@@ -28,6 +28,17 @@ RUN apt-get update && apt-get install -y ros-${ROS_DISTRO}-pcl-conversions && \
 RUN apt-get update && apt-get install -y ros-${ROS_DISTRO}-rmw-cyclonedds-cpp && \
     rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y libcgal-dev pcl-tools && \
+    apt-get install -y libgl-dev libglm-dev libglfw3-dev libglew-dev libglw1-mesa-dev && \
+    apt-get install -y libcgal-dev libxkbcommon-x11-dev && rm -rf /var/lib/apt/lists/*
+
+RUN git clone https://github.com/Livox-SDK/Livox-SDK2.git && cd ./Livox-SDK2/ && mkdir build && \
+    cd build && cmake .. && make -j && make install
+
+RUN apt-get update && apt-get install -y ros-${ROS_DISTRO}-tf-transformations python-is-python3 python3-pip  libxcb-cursor0&&\
+    rm -rf /var/lib/apt/lists/*
+RUN python3 -m pip config set global.break-system-packages true && pip install evo
+RUN pip install PyQt6
 ENV RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 COPY ./ros_entrypoint.sh /
 ENTRYPOINT ["/ros_entrypoint.sh"]
